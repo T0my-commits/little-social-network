@@ -1,0 +1,449 @@
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserrat_alternatesXBd';
+    src: url('../fonts/montserratalternates-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserratalternates-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html { 
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	position: relative;
+	font-family: 'montserratregular', 'Arial';
+	color: white;
+}
+/*
+#bg
+{
+	position: fixed;
+	bottom: -100px;
+	top: -100px;
+	right: -100px;
+	left: -100px;
+	background-color: white; Ici insérer le chemin vers l'image...
+	filter: blur(10px);
+}
+*/
+#body
+{
+	position: relative;
+	z-index: 1;
+}
+
+.title
+{
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+	color: black;
+	padding: 30px 50px;
+/*	background-color: rgba(255, 255, 255, 0.7); LAISSER CA SI IMG DE FOND*/
+	border-radius: 10px;
+}
+
+h1
+{
+	font-family: 'montserratsemibold', 'montserratregular', 'Arial';
+	color: #1831a4;
+	text-transform: uppercase;
+	border-bottom: 1px solid #1831a4;
+	padding-bottom: 10px;
+}
+
+.title_msg
+{
+	background-color: var(--tip-color);
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'montserratsemibold';
+	box-shadow: 1px 1px 5px rgba(26, 26, 26, 0.5);
+	transition: box-shadow 0.2s;
+}
+
+.title_msg:hover
+{
+	box-shadow: 1px 5px 8px rgba(26, 26, 26, 0.5);
+	transition: box-shadow 0.2s;
+}
+
+.infos
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	width: 80%;
+	font-family: 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
+	margin: auto;
+	padding: 20px 40px;
+	padding-bottom: 60px;
+	border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+/*	background-color: var(--tip-color);*/
+}
+
+.infos_date
+{
+	margin-right: 100px;
+}
+
+.hour
+{
+	font-size: 80px;
+	margin-bottom: 10px;
+}
+
+.date_info
+{
+	font-size: 17px;
+}
+
+.repere
+{
+	font-family: 'montserratregular';
+	font-size: 13px;
+}
+
+.repere a
+{
+	color: inherit;
+}
+
+.infos_form form
+{
+	width: 350px;
+	margin-top: 80px;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	flex-direction: column;
+}
+
+.choose_tags
+{
+	width: 100%;
+	padding: 14px 24px;
+	font-size: 15px;
+	background-color: white;
+	border-radius: 2px;
+	border: none;
+}
+
+.submit:not(.msg_footer)
+{
+	width: 150px;
+	height: 40px;
+	padding: 10px 20px;
+	margin-top: 30px;
+	color: white;
+	background-color: var(--tip-color);
+	text-decoration: none;
+	text-align: center;
+	border-radius: 2px;
+	box-shadow: 1px 1px 8px rgba(26, 26, 26, 0.7);
+	border: none;
+	transition: box-shadow ease-in-out 0.2s;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.submit:not(.msg_footer):hover
+{
+	box-shadow: 1px 5px 10px rgba(26, 26, 26, 0.7);
+	opacity: 0.95;
+	transition: box-shadow ease-in-out 0.2s;
+}
+
+.msg
+{
+	max-width: 1300px;
+	margin: auto;
+	padding: 20px 10px;
+	display: flex;
+	justify-content: space-between;
+	flex: row;
+	font-size: 0.9em;
+	line-height: 18px;
+}
+
+.b1, .b2, .b3
+{
+	width: 430px;
+	margin-top: 60px;
+	/*border: 2px solid black;*/
+}
+
+.date
+{
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.tip
+{
+	position: relative;
+	background-color: var(--tip-color);
+	border-radius: 50px;
+	margin-right: 50px;
+	padding: 15px 30px;
+	margin-bottom: 0px;
+	cursor: normal;
+	transition: box-shadow 0.2s;
+	z-index: 2;
+}
+
+.tip_img
+{
+	position: relative;
+	top: -28px;
+	right: -360px;
+	width: 25px;
+	height: 25px;
+	z-index: 2;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+}
+
+.opt_icon
+{
+	display: none;
+	position: relative;
+	top: -100px;
+	right: -310px;
+	width: 22px;
+	height: 22px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 50px;
+	box-shadow: 2px 1px 5px rgba(26, 26, 26, 0.7);
+	padding: 4px;
+	z-index: 5;
+}
+
+.tap
+{
+	position: relative;
+	background-color: var(--tap-color);
+	border-radius: 50px;
+	margin-left: 50px;
+	padding: 15px 30px;
+	color: rgba(0, 0, 0, 0.8);
+	margin-bottom: 0px;
+	cursor: normal;
+	transition: box-shadow 0.2s;
+	z-index: 2;
+}
+
+.tap_img
+{
+	position: relative;
+	top: -32px;
+	right: -47px;
+	width: 25px;
+	height: 25px;
+	z-index: 2;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+}
+
+.tap_img + .opt_icon
+{
+	right: -360px;
+}
+
+.tap:hover, .tip:hover
+{
+	box-shadow: 2px 1px 10px rgba(26, 26, 26, 0.7);
+	transition: box-shadow 0.2s;
+}
+
+.no_answers
+{
+	background-color: yellow;
+	border-radius: 50px;
+}
+
+.msg_footer
+{
+	width: 70px;
+	display: block;
+	position: relative;
+	top: -20px;
+	right: -260px;
+	font-size: 14px;
+	margin: 0px 10px;
+	color: var(--tap-color);
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	text-decoration: none;
+}
+
+.msg_footer:hover
+{
+	text-decoration: underline;
+}
+
+.input_hide
+{
+	display: none;
+}
+
+.leavetip
+{
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: 'montserratsemibold';
+	font-size: 22px;
+	border-bottom: 1px solid white;
+	margin-bottom: 20px;
+	margin-top: 70px;
+}
+
+.reponse
+{
+	position: relative;
+	width: 60%;
+	margin-left: 10%;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	padding: 5px 0px;
+	font-size: 14px;
+	z-index: 5;
+	/*background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;*/
+}
+
+.reponse form
+{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	padding: 0px;
+	/*border: 1px solid white;*/
+}
+
+.reponse select
+{
+	padding: 5px 10px;
+	width: 50%;
+	border-radius: 5px;
+}
+
+.reponse select + p
+{
+	margin-bottom: 30px;
+}
+
+.reponse textarea
+{
+	border-radius: 5px;
+	font-family: 'montserratregular';
+	border: none;
+	padding: 10px 20px;
+	font-size: 14px;
+	border: 3px solid transparent;
+	transition: border 0.2s;
+}
+
+.reponse textarea:hover
+{
+	border: 3px solid var(--tip-color);
+	transition: border 0.2s;
+}
+
+
+/* ============================== Media Queries ================================ */
+@media all and (max-width: 1200px)
+{
+	.title
+	{
+		font-size: 15px;
+	}
+
+	.title h1
+	{
+		font-size: 25px;
+	}
+
+	.hour
+	{
+		font-size: 60px;
+	}
+
+	.date_info
+	{
+		font-size: 12px;
+	}
+
+	.msg
+	{
+		width: 80%;
+		flex-wrap: wrap;
+	}
+
+	.b1, .b2, .b3
+	{
+		font-size: 14px;
+	}
+
+	.leavetip, .reponse
+	{
+		width: 80%;
+	}
+
+	.reponse select
+	{
+		width: 60%;
+	}
+}
+
+@media all and (max-width: 800px)
+{
+	.title
+	{
+		text-align: justify;
+	}
+
+	.b3
+	{
+		align-items: flex-end;
+	}
+
+	.msg
+	{
+		min-width: 500px;
+	}
+}

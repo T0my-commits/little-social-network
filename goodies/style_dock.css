@@ -1,0 +1,213 @@
+/* ------------------------------------ Propriétés CSS communes à toutes les pages ------------------------------------ */
+a
+{
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+li 
+{
+	list-style-type: none;
+}
+
+/* ------------------------------------ On défini les propriétés CSS de notre header ------------------------------------ */
+header
+{
+	z-index: 1;
+	position: fixed;
+	word-spacing: normal;
+	z-index: 10;
+}
+
+header ul
+{
+	display: flex;
+	position: fixed;
+	margin-top: 0px;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 80px;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+header ul li:last-child
+{
+	margin-right: 30px;
+}
+
+header li a
+{
+	color: black;
+	cursor: pointer;
+	transition: color 0.1s;
+}
+
+header li a:not(.unaware):hover
+{
+	color: var(--tip-color);
+	transition: color 0.1s;
+}
+
+header li
+{
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+}
+
+header li:not(.block1)
+{
+	font-size: 12px;
+}
+
+header img
+{
+	width: 60px;
+	height: 60px;
+}
+
+header .block1
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .block1 li:not(.unaware)
+{
+	font-size: 13px;
+	margin-left: 0px;
+	padding-left: 10px;
+	border-left: 1px solid grey;
+}
+
+header .research
+{
+	width: 30px;
+	height: 30px;
+	border-radius: 200px;
+	transition: background-color 0.2s;
+	padding: 5px 5px;
+	margin: none;
+}
+
+header .research:hover
+{
+	background-color: var(--tip-color-opacity25);
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+
+.dropdown a img
+{
+	width: auto;
+	height: auto;
+	margin: 10px 2px 10px 20px;
+	padding: 0px;
+	background-color: var(--tip-color);
+}
+
+#options_menu {
+    display: none;
+    z-index: 3;
+    position: absolute;
+    right: 7%;
+    top: 90px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+}
+ 
+#options_menu a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+ 
+#options_menu a:hover {
+    background-color: #f1f1f1
+}
+
+#options_menu img
+{
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -25.5px;
+	right: 20px;
+}
+
+.unaware
+{
+	font-family: 'montserrat_alternatesXBd', 'Cantarell', 'Arial', 'Impact';
+	font-size: 28px;
+	color: var(--tip-color);
+	text-shadow: 1px 1px 1px grey;
+}
+
+.button
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-width: 300px;
+}
+
+.button #inscript
+{
+	padding: 12px 10px;
+	border-radius: 6px;
+	background-color: var(--tip-color);
+	color: white;
+	transition: box-shadow 0.3s;
+	font-family: 'montserratsemibold', 'Cantarell', 'Arial', 'Impact';
+}
+
+.button #inscript:hover
+{
+	box-shadow: 0px 3px 5px grey;
+	transition: box-shadow 0.3s;
+}
+
+.button #inscript a
+{
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.button #connect
+{	text-transform: uppercase;
+	font-weight: bold;
+	padding: 12px 10px;
+	border-radius: 6px;
+	border: 1px var(--tip-color) solid;
+	transition: background-color 0.35s;
+	font-family: 'montserratsemibold', 'Cantarell', 'Arial', 'Impact';
+}
+
+.button #connect:hover
+{
+	background-color: var(--tip-color-opacity25);
+	border: var(--tip-color) solid 1px;
+	transition: background-color 0.5s;
+}
+
+.button #connect a
+{
+	color: var(--tip-color);
+}
+
+#separator
+{
+	border-bottom: 1px dashed grey;
+}

@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserrat_alternatesXBd';
+    src: url('../fonts/montserratalternates-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserratalternates-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* ----------------------------------------- Block registration ----------------------------------------- */
+body
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-image: url('../pictures/notebooks.jpeg');
+	font-family: 'montserratregular', 'Arial';
+}
+
+aside
+{
+	width: 425px;
+	border-radius: 10px;
+	padding: 20px 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	align-self: center;
+}
+
+form
+{
+	width: 300px;
+	border-radius: 3px;
+	padding: 20px 50px;
+	color: var(--main-bg-color);
+}
+
+form input
+{
+	box-sizing: border-box;
+	appearance: none;
+	margin-left: : 50px;
+	appearance: none;
+	-moz-appearance: none;
+	outline: none;
+	border: 1px solid #d8dcde;
+	border-radius: 4px;
+	background-color: white;
+	padding: .71429em 1.14286em;
+	width: 100%;
+	min-height: 40px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	line-height: 1.28571;
+	color: #3f5064;
+	font-size: 14px;
+	transition: border ease-in-out 0.1s;
+	margin: 5px 10px;
+}
+
+form input:hover
+{
+	border: 1px solid var(--main-bg-color);
+	transition: border ease-in-out 0.1s;
+}
+
+form input:focus
+{
+	border: 1px solid var(--main-bg-color);
+}
+
+.submit
+{
+	text-decoration: none;
+	width: 180px;
+	text-align: center;
+	background-color: var(--main-bg-color);
+	color: white;
+	border-radius: 2px;
+	box-shadow: 1px 1px 8px #444444;
+	border: none;
+	transition: box-shadow ease-in-out 0.2s;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+
+.submit:hover
+{
+	box-shadow: 1px 5px 10px #444444;
+	transition: box-shadow ease-in-out 0.2s;
+}
+
+.alert
+{
+	font-size: 0.8em;
+	font-weight: normal;
+	color: #ff5252;
+	border-top: 1px solid #ff5252;
+	padding-top: 6px;
+	margin-top: 5px;
+}
+
+.good_job
+{
+	width: 350px;
+	font-size: 0.9em;
+	font-weight: normal;
+	color: green;
+	border-top: 1px solid green;
+	padding-top: 6px;
+	margin-top: 5px;
+	margin: auto;
+}
+
+.good_job a
+{
+	text-decoration: none;
+}
+
+#contact {
+	width: 500px;
+	padding: 10px 25px;
+	border-radius: 100px;
+	margin-top: 5%;
+	font-family: 'montserratregular';
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-self: center;
+	flex-direction: column;
+	height: 100px;
+	color: white;
+	background-color: var(--footer-bg-color);
+	text-align: center;
+	font-size: 18px;
+	word-spacing: normal;
+}

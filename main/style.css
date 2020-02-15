@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserrat_alternatesXBd';
+    src: url('../fonts/montserratalternates-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/montserratalternates-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('../fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html { 
+	margin: none;
+	padding: none;
+}
+
+body
+{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	font-family: 'montserratregular', 'Cantarell', 'Arial';
+	min-height: 900px;
+	margin: none;
+	padding: none;
+/*	border: 4px solid black;*/
+}
+
+a
+{
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+	color: inherit;
+	font-family: 'montserratsemibold', 'Cantarell', 'Arial';
+}
+
+h1
+{
+	width: 800px;
+	font-family: 'montserratsemibold', 'Cantarell', 'Arial';
+	font-size: 50px;
+	color: white;
+	text-shadow: 1px 1px 5px rgba(26, 26, 26, 0.7);
+	text-align: center;
+	margin: auto;
+	margin-top: 50px;
+	padding: 40px 10px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 10px
+}
+
+.puces
+{
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-shadow: 1px 1px 5px rgba(26, 26, 26, 0.5);
+/*	border: 4px solid black;*/
+}
+
+.puces:hover
+{
+	flex-wrap: none;
+}
+
+.puces a
+{
+	margin: 10px 70px;
+	padding: 20px 30px;
+	color: white;
+	border-radius: 100px;
+/*	border: 1px solid white;
+	box-shadow: 1px 1px 5px #262626;*/
+	text-align: center;
+	transition: font-size 0.3s;
+}
+
+.puces a:hover
+{
+	font-size: 1.1em;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: font-size 0.3s;
+}
+
+.menu
+{
+	margin-top: 10px;
+	height: 80%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.menu img
+{
+	width: 130px;
+	height: 130px;
+	margin: auto;
+}
+
+.opt
+{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	margin: 5px 100px;
+	color: white;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.opt img
+{
+	width: 80px;
+	height: 80px;
+}
+
+.opt a
+{
+	border-radius: 10px;
+	transition: background-color 0.2s;
+	padding: 10px 30px;
+}
+
+.opt a:hover
+{
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: background-color 0.2s;
+}
+
+.date
+{
+	color: white;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: right;
+	margin-right: 20px;
+}
+
+/*
+.personnalisation
+{
+	position: absolute;
+	width: 97%;
+}
+
+.custom
+{
+	width: 600px;
+	background-color: green;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: auto;
+}
+
+.custom .menu img
+{
+	width: 60px;
+	height: 60px;
+}
+
+.accedera
+{
+	display: flex;
+	justify-content: space-around;
+}
+*/
+
+
+/* ============================== Media Queries ================================ */
+@media all and (max-width: 1200px)
+{
+	body
+	{
+		min-height: 550px;
+	}
+
+	h1
+	{
+		width: 70%;
+		font-size: 35px;
+	}
+
+	.puces
+	{
+		width: 80%;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	.puces a
+	{
+		margin: 0px;
+	}
+
+	.menu img
+	{
+		width: 90px;
+		height: 90px;
+	}
+
+	.opt img
+	{
+		width: 60px;
+		height: 60px;
+	}
+}
+
+@media all and (max-width: 800px)
+{
+
+	h1
+	{
+		width: 95.5%;
+		border-radius: none;
+		top: 0px;
+		font-size: 35px;
+	}
+}
+
+@media all and (max-width: 500px)
+{
+
+	.opt
+	{
+		width: 97%;
+		margin: auto;
+	}
+
+	.puces
+	{
+		margin-top: 50px;
+	}
+}
+
+@media handheld
+{
+	h1
+	{
+		color: green;
+	}
+}
