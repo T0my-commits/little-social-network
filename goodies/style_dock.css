@@ -19,6 +19,7 @@ header
 	position: fixed;
 	word-spacing: normal;
 	z-index: 10;
+	color: black;
 }
 
 header ul

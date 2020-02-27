@@ -1,4 +1,4 @@
-$('.title_msg').text('Cacher le message');
+$('.msgNoJs').text('Cacher le message');
 $('#alea').css('display', 'none');
 
 $(function souris(event) {
