@@ -142,9 +142,6 @@
 		</div>
 
 		<?php if ($i >= 6 AND $i < 11) { ?>
-			<style>
-				.msg { justify-content: flex-start; }
-			</style>
 		<?php } ?>
 
 		<div id='reponse'>

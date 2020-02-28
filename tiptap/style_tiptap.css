@@ -242,20 +242,21 @@ h1
 
 .msg
 {
-	max-width: 1300px;
-	margin: auto;
+	margin-left: 50px;
 	padding: 20px 10px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex: row;
 	font-size: 0.9em;
 	line-height: 18px;
+	flex-wrap: wrap;
+	/*border: 2px solid red;*/
 }
 
 .b1, .b2, .b3
 {
-	min-width: 430px;
-	margin-right: 40px;
+	width: 430px;
+	margin-right: 50px;
 	margin-top: 50px;
 	/*border: 2px solid black;*/
 }
