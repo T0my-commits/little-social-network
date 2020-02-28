@@ -1,5 +1,5 @@
 <?php
-// On démarre les sessions;
+// Starting sessions;
 session_start();
 
 if (! isset($_SESSION['pseudo'])) { ?>

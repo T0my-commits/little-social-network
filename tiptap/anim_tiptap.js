@@ -24,3 +24,8 @@ $('.menu').on('click', function() {
 $("header a").on('click', function() {
 	$(this).slideToggle(150).slideToggle(150);
 });
+
+$('.msg_footer').on('click', function() {
+	$(this).slideToggle(150).slideToggle(150);
+	$(this).next('.showTextAreaForTap').slideToggle().css('display', 'block');
+});

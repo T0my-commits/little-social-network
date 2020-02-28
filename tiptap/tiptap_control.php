@@ -7,6 +7,7 @@ require('tiptap_model.php');
 
 // if $_COOKIES['bg_change'] == yes { $bg_change = 'yes'; }
 
+// Add Tip;
 if (isset($_POST['send_tip'])) {
 	$tip = strip_tags($_POST['send_tip']);
 	if (isset($_POST['send_tag_with_my_tip'])) {
@@ -17,11 +18,15 @@ if (isset($_POST['send_tip'])) {
 	}
 	addTips($tip, $tags);
 }
-elseif (isset($_POST['id_tip'])) { // Add tap;
-	$ID_TIP = htmlspecialchars($_GET['id_tip']);
-	require('answers_control.php');
+// Add Tap;
+elseif (isset($_POST['send_tap']) AND isset($_POST['ID_TIP'])) {
+	$tap = strip_tags($_POST['send_tap']);
+	$ID_TIP = strip_tags($_POST['ID_TIP']);
+	addTaps($tap, $ID_TIP);
 }
-elseif (! isset($_POST['id_tip']) AND ! isset($_POST['send_tip'])) {
+// Just see the fuck*ng website !!!
+// :p
+elseif (! isset($_POST['send_tip'])) {
 	$answers = getTips();
 	require('tiptap_view.php');
 }

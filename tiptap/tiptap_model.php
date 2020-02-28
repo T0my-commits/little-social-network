@@ -125,25 +125,25 @@ function addTips($tips, $tags)
 	header('Location: tiptap_control.php');
 }
 
-function postComment($ID_TIP, $msg)
+function postTaps($msg, $ID_TIP)
 {
 	// Connection to db;
 	$db = dbConnect();
 
 	// Add a new tip;
-    $comments = $db->prepare('INSERT INTO taps(ID_TIP, msg, send_date, alert, autor) VALUES(:ID_TIP, :msg, NOW(), :alert, :autor)');
+    $comments = $db->prepare('INSERT INTO taps(ID_TIP, msg, send_date, alert, autor) VALUES(:ID_TIP, :msg, CURDATE(), :alert, :autor)');
     $affectedLines = $comments->execute(array(
     	'ID_TIP' => $ID_TIP, 
-    	'msg' => $msg,
+    	'msg' => nl2br($msg),
     	'alert' => 0, 
     	'autor' => $_SESSION['id'])); // Potentiellement une faille de sécurité ici;
 
     return $affectedLines;
 }
 
-function addComment($ID_TIP, $msg)
+function addTaps($msg, $ID_TIP)
 {
-    $affectedLines = postTips($ID_TIP, $msg);
+    $affectedLines = postTaps($msg, $ID_TIP);
 	header('Location: tiptap_control.php');
 }
 

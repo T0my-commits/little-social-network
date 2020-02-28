@@ -168,7 +168,7 @@ h1
 	transition: box-shadow ease-in-out 0.2s;
 }
 
-.dock_infos
+#dock_infos
 {
 	display: flex;
 	justify-content: space-around;
@@ -201,12 +201,12 @@ h1
 #dock_infos_block2 a
 {
 	width: 70%;
-	height: 20px;
+	min-height: 20px;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
 	line-height: 22px;
-	font-size: 14px;
+	font-size: 12px;
 	margin: 10px 15px;
 	padding: 12px 20px;
 	font-family: 'montserratsemibold', 'montserratregular', 'Arial';
@@ -254,8 +254,9 @@ h1
 
 .b1, .b2, .b3
 {
-	width: 430px;
-	margin-top: 60px;
+	min-width: 430px;
+	margin-right: 40px;
+	margin-top: 50px;
 	/*border: 2px solid black;*/
 }
 
@@ -372,11 +373,6 @@ h1
 	text-decoration: underline;
 }
 
-.input_hide
-{
-	display: none;
-}
-
 .leavetip
 {
 	width: 100%;
@@ -443,6 +439,56 @@ h1
 	transition: border 0.2s;
 }
 
+.showTextAreaForTap
+{
+	display: none;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 50px;
+	padding: 20px 15px;
+	border-radius: 2px;
+	/*box-shadow: 1px 5px 10px rgba(36, 36, 36, 0.5);*/
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.showTextAreaForTap form
+{
+	display: block;
+	background-color: white;
+}
+
+.showTextAreaForTap form textarea
+{
+	width: 80%;
+	border-radius: 50px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 10px 15px;
+	font-family: '', 'montserratregular', 'Arial';
+	font-size: 13px;
+	line-height: 18px;
+	transition: border 0.2s;
+}
+
+.showTextAreaForTap form textarea:hover, .showTextAreaForTap form textarea:focus
+{
+	border: 1px solid var(--tip-color);
+	transition: border 0.2s;
+}
+
+.showTextAreaForTap form .submit
+{
+	font-size: 10px;
+	width: 90px;
+	height: 35px;
+	margin-left: 15px;
+	padding: 10px;
+}
+
+.input_hide
+{
+	display: none;
+}
+
 
 /* ============================== Media Queries ================================ */
 @media all and (max-width: 1200px)
@@ -465,6 +511,11 @@ h1
 	.date_info
 	{
 		font-size: 12px;
+	}
+
+	#dock_infos_block2 a
+	{
+		font-size: 11px;
 	}
 
 	.msg
@@ -499,6 +550,17 @@ h1
 	.b3
 	{
 		align-items: flex-end;
+	}
+
+	#dock_infos_block1
+	{
+		display: none;
+	}
+
+	#dock_infos_block2
+	{
+		width: 100%;
+		flex-direction: row-reverse;
 	}
 
 	.msg
