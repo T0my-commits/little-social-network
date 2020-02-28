@@ -12,11 +12,15 @@ $(function souris(event) {
 	element.style.top = y + 'px';
 });
 
-$('.title_msg').on('click', function() {
+$('.msgNoJs').on('click', function() {
 	$('.title').slideToggle();
 });
 
 $('.menu').on('click', function() {
 	$('#options_menu').slideToggle(150).css('display', 'block');
 	$(this).toggle(150).toggle(150);
+});
+
+$("header a").on('click', function() {
+	$(this).slideToggle(150).slideToggle(150);
 });

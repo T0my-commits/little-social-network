@@ -137,7 +137,7 @@
 		</style>
 	<?php } ?>
 
-	<div class='reponse'>
+	<div id='reponse'>
 		<div class='leavetip'>
 			<p>Leave a Tip & keep calm</p>
 		</div>
