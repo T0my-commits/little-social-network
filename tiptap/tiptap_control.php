@@ -24,6 +24,18 @@ elseif (isset($_POST['send_tap']) AND isset($_POST['ID_TIP'])) {
 	$ID_TIP = strip_tags($_POST['ID_TIP']);
 	addTaps($tap, $ID_TIP);
 }
+// Update Tip or Tap;
+elseif (isset($_POST['modif_tiptap']) AND isset($_POST['ID']) AND isset($_POST['gr'])) {
+	if ($_POST['gr'] == 'tips' OR $_POST['gr'] == 'taps') {
+		$type = strip_tags($_POST['gr']);
+	}
+	else {
+		header('Location: tiptap_control.php?error');
+	}
+	$msg = strip_tags($_POST['modif_tiptap']);
+	$ID = strip_tags($_POST['ID']);
+	updateMsg($type, $msg, $ID);
+}
 // Just see the fuck*ng website !!!
 // :p
 elseif (! isset($_POST['send_tip'])) {

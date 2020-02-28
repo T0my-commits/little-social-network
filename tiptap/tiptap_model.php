@@ -110,7 +110,7 @@ function postTips($tip, $tags)
 	// Add a new tip;
     $comments = $db->prepare('INSERT INTO tips(msg, tags, send_date, no_answers, alert, autor) VALUES(:tip, :tags, NOW(), :no_answers, :alert, :autor)');
     $affectedLines = $comments->execute(array(
-    	'tip' => $tip, 
+    	'tip' => nl2br($tip), 
     	'tags' => $tags, 
     	'no_answers' => 1, 
     	'alert' => 0, 
@@ -144,6 +144,28 @@ function postTaps($msg, $ID_TIP)
 function addTaps($msg, $ID_TIP)
 {
     $affectedLines = postTaps($msg, $ID_TIP);
+	header('Location: tiptap_control.php');
+}
+
+function rePostMsg($type, $msg, $ID)
+{
+	// Connection to db;
+	$db = dbConnect();
+
+	// Update tip;
+    $comments = $db->prepare('UPDATE :type SET msg = :msg WHERE id = :ID');
+    $affectedLines = $comments->execute(array(
+    	'type' => $type,
+    	'msg' => nl2br($msg),
+    	'ID' => $ID
+    ));
+
+    return $affectedLines;
+}
+
+function updateMsg($type, $msg, $ID)
+{
+    $affectedLines = rePostMsg($type, $msg, $ID);
 	header('Location: tiptap_control.php');
 }
 

@@ -112,14 +112,36 @@
 					<?php } $day_send_date = $data['day_send_date']; ?>
 
 					<p class="tip"><?= $data['msg']; ?></p><img src='../pictures/tip_msg.png' class='tip_img' /><img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
-					<a class='msg_footer'>Répondre</a>
+					<p class='tip_footer'>
+						<?php if ($_SESSION['id'] == $data['autor']) { ?>
+							<a class='modif_footer'>Modifier</a>
+						<?php } ?>
+						<a class='msg_footer'>Répondre</a>
+					</p>
 
+					<?php if (isset($_SESSION['id'])) { ?>
 					<div class="showTextAreaForTap">
 						<form action='tiptap_control.php' method='POST'>
 							<p>Vous souhaitez ajouter quelque chose ?</p>
-							<input type='number' name='ID_TIP' value='<?= $data['id']; ?>' class='input_hide'>
+							<input type='number' name='ID_TIP' value='<?= $data['id']; ?>' class='input_hide' />
 							<textarea name='send_tap' placeholder='Je suis bref et respectueux dans mes propos (400 caractères max.)' maxlength='400' cols='1' title='' required></textarea>
 							<input type='submit' value='Répondre' class='submit' />
+						</form>
+					</div>
+					<?php } else { ?>
+						<div class='showTextAreaForTap'>
+							<p>Vous devez être connecté pour poster des Taps.</p>
+							<a href='../members/connection_control.php?connection' class='submit'>J'ai compris !</a>
+						</div>
+					<?php } ?>
+
+					<div class='showTextAreaForTap'>
+						<form action='tiptap_control.php' method='POST'>
+							<p>Qui ne modifie pas n'est pas français ! Hé ! ^^</p>
+							<input type='text' name='gr' value='tips' class='input_hide' />
+							<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' />
+							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' cols='1' title='' required><?= $data['msg']; ?></textarea>
+							<input type='submit' value='Soumettre' class='submit' />
 						</form>
 					</div>
 
@@ -127,6 +149,21 @@
 					while ($tap = $taps->fetch()) { ?>
 
 						<p class="tap"><?= $tap['msg']; ?></p><img src='../pictures/tap_msg.png' class='tap_img' /><img src='../pictures/opt_icon.png' class='opt_icon' />
+						<p class='tap_footer'>
+							<?php if ($_SESSION['id'] == $tap['autor']) { ?>
+								<a class='modif_tap_footer'>Modifier</a>
+							<?php } ?>
+						</p>
+
+					<div class='showTextAreaForTap'>
+						<form action='tiptap_control.php' method='POST'>
+							<p>Alors comme ça on a un doute ? :P</p>
+							<input type='text' name='gr' value='taps' class='input_hide' />
+							<input type='number' name='ID' value='<?= $tap['id']; ?>' class='input_hide' />
+							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' cols='3' rows='5' title='' required><?= $tap['msg']; ?></textarea>
+							<input type='submit' value='Soumettre' class='submit' />
+						</form>
+					</div>
 
 					<?php } $taps->closeCursor(); ?>
 

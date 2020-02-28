@@ -27,5 +27,15 @@ $("header a").on('click', function() {
 
 $('.msg_footer').on('click', function() {
 	$(this).slideToggle(150).slideToggle(150);
-	$(this).next('.showTextAreaForTap').slideToggle().css('display', 'block');
+	$(this).parent().next('.showTextAreaForTap').slideToggle().css('display', 'block');
+});
+
+$('.modif_footer').on('click', function() {
+	$(this).slideToggle(150).slideToggle(150);
+	$(this).parent().next('.showTextAreaForTap').next('.showTextAreaForTap').slideToggle().css('display', 'block');
+});
+
+$('.modif_tap_footer').on('click', function() {
+	$(this).slideToggle(150).slideToggle(150);
+	$(this).parent().next('.showTextAreaForTap').slideToggle().css('display', 'block');
 });

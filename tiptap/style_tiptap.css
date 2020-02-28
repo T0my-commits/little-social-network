@@ -353,15 +353,15 @@ h1
 	border-radius: 50px;
 }
 
-.msg_footer
+.tip_footer, .tap_footer
 {
-	width: 70px;
-	display: block;
+	width: 84%;
 	position: relative;
-	top: -20px;
-	right: -260px;
+	top: -35px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
 	font-size: 14px;
-	margin: 0px 10px;
 	color: rgba(0, 0, 0, 0.7);
 	cursor: pointer;
 	background-color: transparent;
@@ -369,7 +369,17 @@ h1
 	text-decoration: none;
 }
 
-.msg_footer:hover
+.tap_footer
+{
+	width: 93%;
+}
+
+.msg_footer, .modif_footer
+{
+	margin: 3px 10px;
+}
+
+.msg_footer:hover, .modif_footer:hover
 {
 	text-decoration: underline;
 }
@@ -476,7 +486,7 @@ h1
 	transition: border 0.2s;
 }
 
-.showTextAreaForTap form .submit
+.showTextAreaForTap .submit
 {
 	font-size: 10px;
 	width: 90px;
@@ -488,6 +498,11 @@ h1
 .input_hide
 {
 	display: none;
+}
+
+.showTextAreaForTap p
+{
+	font-size: 14px;
 }
 
 
