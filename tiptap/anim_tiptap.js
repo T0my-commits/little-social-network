@@ -1,6 +1,17 @@
 $('.msgNoJs').text('Cacher le message');
 $('#alea').css('display', 'none');
 
+function resize(textarea) {
+    var txt = textarea.value;
+    var line = txt.split("\n");
+    var nbr_lines = 1;
+    for(var i=0;i<line.length;i++) {
+        nbr_lines += Math.ceil(line[i].length / (textarea.cols + 7));
+    }
+    textarea.rows = nbr_lines;
+}
+
+/*
 $(function souris(event) {
 	var x = event.clientX;
 	var y = event.clientY;
@@ -11,6 +22,7 @@ $(function souris(event) {
 	element.style.left = x + 'px';
 	element.style.top = y + 'px';
 });
+*/
 
 $('.msgNoJs').on('click', function() {
 	$('.title').slideToggle();

@@ -1,6 +1,47 @@
 <?php
 
 // Functions;
+function countMsg()
+{
+	// Connection to db;
+	$db = dbConnect();
+
+	// Count all messages which are posted;
+	try
+	{
+		$tips = $db->query('SELECT COUNT(*) FROM tips');
+		$nbTips = $tips->fetch();
+
+		$taps = $db->query('SELECT COUNT(*) FROM taps');
+		$nbTaps = $taps->fetch();
+
+		$nbMsg = $nbTips[0] + $nbTaps[0];
+		return $nbMsg;
+	}
+	catch(Exception $e)
+	{
+		die('Erreur : '.$e->fetMessage());
+	}
+}
+
+function countMembers()
+{
+	// Connection to db;
+	$db = dbConnect();
+
+	// Count all Members;
+	try
+	{
+		$members = $db->query('SELECT COUNT(*) FROM members');
+		$nbMembers = $members->fetch();
+		return $nbMembers;
+	}
+	catch(Exception $e)
+	{
+		die('Erreur : '.$e->fetMessage());
+	}
+}
+
 function getTips()
 {
 	$tags = array("Licences et Licences pro",
@@ -61,7 +102,7 @@ function getTips()
 	if (isset($research))
 	{
 		try {
-			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d/%m/%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT 0, 30');
+			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT 0, 30');
 			$answers->execute(array(
 				'research' => $research));
 		}
@@ -74,7 +115,7 @@ function getTips()
 	}
 	else
 	{
-		$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d/%m/%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT 0, 30');
+		$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT 0, 30');
 		$answers->execute(array(
 			'page' => $page));
 	}

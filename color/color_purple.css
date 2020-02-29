@@ -14,9 +14,9 @@ Now, the filename is 'color_purple.css' but it is not permanent.
 	
 	/* Tip & Tap */
 	--bg-tiptop: #9babb0;
-	--tip-color: rgba(182, 34, 67, 1);
-	--tip-color-opacity75: rgba(182, 34, 67, 0.65);
-	--tip-color-opacity25: rgba(182, 34, 67, 0.25);
+	--tip-color: rgba(3, 132, 144, 1);
+	--tip-color-opacity75: rgba(3, 132, 144, 0.65);
+	--tip-color-opacity25: rgba(3, 132, 144, 0.25);
 	--tap-color: rgba(160, 192, 185, 1);
 }
 

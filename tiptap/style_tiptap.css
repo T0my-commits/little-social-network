@@ -85,7 +85,7 @@ h1
 	align-items: center;
 	font-family: 'montserratregular', 'montserratsemibold', 'montserrat_alternatesXBd', 'Arial';
 	margin: 0px;
-	padding: 22px 90px;
+	padding: 10px 90px;
 	padding-bottom: 60px;
 	background-color: var(--tip-color-opacity75);
 }
@@ -184,7 +184,29 @@ h1
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
+	align-items: center;
 	width: 50%;
+}
+
+#dock_infos_block1 div
+{
+	width: 20%;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 20px 5px;
+}
+
+#dock_infos_block1 div strong
+{
+	font-family: 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
+	font-size: 20px;
+}
+
+#dock_infos_block1 div .info_text
+{
+	font-family: 'montserratsemibold', 'montserratregular', 'Arial';
+	font-size: 17px;
 }
 
 #dock_infos_block2
@@ -335,6 +357,13 @@ h1
 	margin: 0px;
 	padding: 0px;
 	z-index: 1;
+}
+
+.tap span
+{
+	font-family: 'montserratsemibold', 'montserratregular', 'Arial';
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.5);
 }
 
 .tap_img + .opt_icon
@@ -555,6 +584,16 @@ h1
 	#reponse select
 	{
 		width: 60%;
+	}
+
+	#dock_infos_block1 div
+	{
+		font-size: 11px;
+	}
+
+	#dock_infos_block1 img
+	{
+		width: 50px;
 	}
 }
 

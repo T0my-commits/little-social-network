@@ -30,6 +30,13 @@
 		<a href='#'><img src='pictures/menu_icon.png' /><br />Menu</a>
 		<?= $opt; ?>
 	</div>
+
+	<?php if (isset($_SESSION['id'])) { ?>
+		<div class='title'>
+			<h2>Bonjour <?= $_SESSION['pseudo']; ?></h2>
+		</div>
+	<?php } ?>
+
 	<div class='title'>
 		<h1>Et un jour de plus sur Unaware :)</h1>
 	</div>

@@ -74,16 +74,20 @@
 			<!-- Test -->
 			<div id='dock_infos_block1'>
 				<div>
-					<img src='../pictures/empty_icon.png' />
+					<img src='../pictures/countMsgIcon.png' />
+					<p>Tip & Tap, c'est<br /><strong><?= $nbMsg; ?></strong><br />messages postés !</p>
 				</div>
 				<div>
-					<img src='../pictures/empty_icon.png' />
+					<img src='../pictures/colorTipTapIcon.png' />
+					<p>C'est également<br /><strong>10</strong><br />thèmes & couleurs différents !</p>
 				</div>
 				<div>
-					<img src='../pictures/empty_icon.png' />
+					<img src='../pictures/countMembersIcon.png' />
+					<p>Une communauté active de<br /><strong><?= $nbMembers[0]; ?></strong><br />membres !</p>
 				</div>
 				<div>
-					<img src='../pictures/empty_icon.png' />
+					<img src='../pictures/protectIcon.png' />
+					<p>Et un service <br /><strong class='info_text'>sûr</strong><br />et de confiance</p>
 				</div>
 			</div>
 
@@ -140,7 +144,7 @@
 							<p>Qui ne modifie pas n'est pas français ! Hé ! ^^</p>
 							<input type='text' name='gr' value='tips' class='input_hide' required />
 							<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' required />
-							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' cols='1' rows='3' title='' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
+							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
 							<input type='submit' value='Soumettre' class='submit' />
 						</form>
 					</div>
@@ -148,7 +152,7 @@
 					<?php $taps = getTaps($data['id']);
 					while ($tap = $taps->fetch()) { ?>
 
-						<p class="tap"><?= $tap['msg']; ?></p><img src='../pictures/tap_msg.png' class='tap_img' /><img src='../pictures/opt_icon.png' class='opt_icon' />
+						<p class="tap"><?php if ($data['autor'] == $tap['autor']) { echo "<span>Re</span>: "; } ?> <?= $tap['msg']; ?></p><img src='../pictures/tap_msg.png' class='tap_img' /><img src='../pictures/opt_icon.png' class='opt_icon' />
 						<p class='tap_footer'>
 							<?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $tap['autor']) { ?>
 								<a class='modif_tap_footer'>Modifier</a>
@@ -160,7 +164,7 @@
 							<p>Alors comme ça on a un doute ? :P</p>
 							<input type='text' name='gr' value='taps' class='input_hide' required />
 							<input type='number' name='ID' value='<?= $tap['id']; ?>' class='input_hide' required />
-							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' cols='1' rows='5' title='' required><?= str_replace("<br />", "", $tap["msg"]); ?></textarea>
+							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $tap["msg"]); ?></textarea>
 							<input type='submit' value='Soumettre' class='submit' />
 						</form>
 					</div>
