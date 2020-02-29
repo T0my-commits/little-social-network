@@ -36,8 +36,6 @@ $('.menu').on('click', function() {
 });
 
 $('#linkTwo').on('click', function() {
-	// Faire une condition pour incrémenter $i à chaque fois et rétablir le padding;
-	// $('#dock_infos').css('padding-top', '0');
 	$('.hide_div').slideToggle().css('display', 'block');
 });
 
