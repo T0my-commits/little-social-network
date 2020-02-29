@@ -97,6 +97,19 @@
 			</div>
 		</div>
 
+		<?php ob_start(); ?>
+			<div class='paging_system'>
+				<?php for ($i = 1; $i <= $nbOfPages; $i++) { ?>
+					<?php if ($i == $page) { ?>
+						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>' class='actualPage'><?= $i ?></p>
+					<?php } else { ?>
+						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>'><?= $i ?></p>
+					<?php } ?>
+				<?php } ?>
+			</div>
+		<?php $paging_system = ob_get_clean(); ?>
+		<?= $paging_system; ?>
+
 		<div class='msg'>
 			<!-- Contain all messages that was posted on tree (max.) columns -->
 
@@ -184,6 +197,8 @@
 
 		<?php if ($i >= 6 AND $i < 11) { ?>
 		<?php } ?>
+
+		<?= $paging_system; ?>
 
 		<div id='reponse'>
 			<div class='leavetip'>

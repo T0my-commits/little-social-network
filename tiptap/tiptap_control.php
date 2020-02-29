@@ -39,9 +39,36 @@ elseif (isset($_POST['modif_tiptap']) AND isset($_POST['ID']) AND isset($_POST['
 // Just see the fuck*ng website !!!
 // :p
 elseif (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_POST['ID_TIP']) AND !isset($_POST['modif_tiptap']) AND !isset($_POST['ID']) AND !isset($_POST['gr'])) {
-	$nbMsg = countMsg();
+	// stats;
+	$nbMsg = countMsg()[0];
 	$nbMembers = countMembers();
-	$answers = getTips();
+	// automatic paging system;
+	$nbTips = countMsg()[1];
+	$nbOfPages = ceil($nbTips/30);
+	try
+	{
+		if (isset($_GET['page'])) {
+			$page = strip_tags($_GET['page']);
+			$page = intval($page);
+			if ($page > $nbOfPages) {
+				$page = $nbOfPages;
+			}
+		}
+		else {
+			$page = 1;
+		}
+	}
+	catch(Exception $e)
+    {
+        die('Erreur : '.$e->getMessage());
+		header('Location: tiptap_control.php');
+    }
+	// get tips;
+	$answers = getTips($page);
+	if (isset($_GET['choose_tags'])) {
+		$choose_tags = strip_tags($_GET['choose_tags']);
+	}
+	// after;
 	require('tiptap_view.php');
 }
 else {

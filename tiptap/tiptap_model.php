@@ -16,7 +16,7 @@ function countMsg()
 		$nbTaps = $taps->fetch();
 
 		$nbMsg = $nbTips[0] + $nbTaps[0];
-		return $nbMsg;
+		return array($nbMsg, $nbTips[0], $nbTaps[0]);
 	}
 	catch(Exception $e)
 	{
@@ -42,7 +42,7 @@ function countMembers()
 	}
 }
 
-function getTips()
+function getTips($page)
 {
 	$tags = array("Licences et Licences pro",
 					"Dentaire",
@@ -91,18 +91,12 @@ function getTips()
 	// We're trying to get tips & taps that user was selected.
 	// If nothing selected, show all;
 
-	if (isset($_GET['page'])) {
-		$page = strip_tags($_GET['page']);
-		$page = $page*30;
-	}
-	else {
-		$page = 0;
-	}
+    $firstEntry = ($page - 1) * 30;
 
 	if (isset($research))
 	{
 		try {
-			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT 0, 30');
+			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT ' . $firstEntry . ', 30'); // Exposure to a security breach I guess;
 			$answers->execute(array(
 				'research' => $research));
 		}
@@ -115,9 +109,7 @@ function getTips()
 	}
 	else
 	{
-		$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT 0, 30');
-		$answers->execute(array(
-			'page' => $page));
+		$answers = $db->query('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT ' . $firstEntry . ' , 30'); // Exposure to a security breach I guess;
 	}
 
 	// Return answers;
