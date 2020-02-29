@@ -153,12 +153,23 @@ function rePostMsg($type, $msg, $ID)
 	$db = dbConnect();
 
 	// Update tip;
-    $comments = $db->prepare('UPDATE :type SET msg = :msg WHERE id = :ID');
-    $affectedLines = $comments->execute(array(
-    	'type' => $type,
-    	'msg' => nl2br($msg),
-    	'ID' => $ID
-    ));
+	if ($type == 'tips') {
+	    $comments = $db->prepare('UPDATE tips SET msg = :msg WHERE id = :ID');
+	    $affectedLines = $comments->execute(array(
+	    	'msg' => nl2br($msg),
+	    	'ID' => $ID
+	    ));
+	}
+	elseif ($type == 'taps') {
+	    $comments = $db->prepare('UPDATE taps SET msg = :msg WHERE id = :ID');
+	    $affectedLines = $comments->execute(array(
+	    	'msg' => nl2br($msg),
+	    	'ID' => $ID
+	    ));
+	}
+	else {
+		header('Location: tiptap_control.php');
+	}
 
     return $affectedLines;
 }

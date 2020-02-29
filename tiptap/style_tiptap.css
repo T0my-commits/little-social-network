@@ -255,7 +255,7 @@ h1
 
 .b1, .b2, .b3
 {
-	width: 430px;
+	width: 380px;
 	margin-right: 50px;
 	margin-top: 50px;
 	/*border: 2px solid black;*/
@@ -285,7 +285,7 @@ h1
 {
 	position: relative;
 	top: -28px;
-	right: -360px;
+	right: -310px;
 	width: 25px;
 	height: 25px;
 	z-index: 2;
@@ -327,8 +327,8 @@ h1
 .tap_img
 {
 	position: relative;
-	top: -32px;
-	right: -47px;
+	top: -22px;
+	right: -48px;
 	width: 25px;
 	height: 25px;
 	z-index: 2;
@@ -374,12 +374,12 @@ h1
 	width: 93%;
 }
 
-.msg_footer, .modif_footer
+.msg_footer, .modif_footer, .modif_tap_footer
 {
-	margin: 3px 10px;
+	margin: 0px 10px;
 }
 
-.msg_footer:hover, .modif_footer:hover
+.msg_footer:hover, .modif_footer:hover, .modif_tap_footer:hover
 {
 	text-decoration: underline;
 }
@@ -453,7 +453,7 @@ h1
 .showTextAreaForTap
 {
 	display: none;
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	margin-bottom: 50px;
 	padding: 20px 15px;
@@ -464,6 +464,8 @@ h1
 
 .showTextAreaForTap form
 {
+	width: 120%;
+	height: auto;
 	display: block;
 	background-color: white;
 }

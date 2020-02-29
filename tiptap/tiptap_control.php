@@ -38,12 +38,12 @@ elseif (isset($_POST['modif_tiptap']) AND isset($_POST['ID']) AND isset($_POST['
 }
 // Just see the fuck*ng website !!!
 // :p
-elseif (! isset($_POST['send_tip'])) {
+elseif (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_POST['ID_TIP']) AND !isset($_POST['modif_tiptap']) AND !isset($_POST['ID']) AND !isset($_POST['gr'])) {
 	$answers = getTips();
 	require('tiptap_view.php');
 }
 else {
-	header('Location: tiptap_control.php');
+	header('Location: tiptap_control.php?rien');
 }
 
 $_SESSION['no_msg_tiptap'] = true;
