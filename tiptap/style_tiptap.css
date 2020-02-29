@@ -567,13 +567,20 @@ h1
 
 	.msg
 	{
-		width: 80%;
+		width: 90%;
 		flex-wrap: wrap;
 	}
 
 	.b1, .b2, .b3
 	{
+		width: 380px;
 		font-size: 14px;
+	}
+
+	.tip, .tap
+	{
+		font-size: 13px;
+		line-height: 16px;
 	}
 
 	.leavetip, #reponse
