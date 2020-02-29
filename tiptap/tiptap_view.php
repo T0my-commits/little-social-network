@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8' />
 	<title>Unaware - Acceuil membres</title>
-	<link href='../color/color_purple.css' rel='stylesheet' />
+	<link href='../color/<?= $color; ?>' rel='stylesheet' />
 	<link href='style_tiptap.css' rel='stylesheet' />
 	<link href='../goodies/style_dock.css' rel='stylesheet' />
 </head>
@@ -27,46 +27,67 @@
 			</div>
 		<?php } ?>
 
-		<div class='infos'>
-			<div class='infos_date'>
-				<p class='repere'><strong><a href='../index.php'>Acceuil</a> ></strong> Tips & Taps</p>
-				<p class='hour'><?= date('H'); ?>h <?= date('i'); ?> min<br /></p>
-				<p class='date_info'><?php include('../goodies/date.php'); ?></p>
-			</div>
+		<div class='hide_div'>
+			<div class='infos'>
+				<div class='infos_date'>
+					<p class='repere'><strong><a href='../index.php'>Acceuil</a> ></strong> Tips & Taps</p>
+					<p class='hour'><?= date('H'); ?>h <?= date('i'); ?> min<br /></p>
+					<p class='date_info'><?php include('../goodies/date.php'); ?></p>
+				</div>
 
-			<div class='infos_form'>
-				<form method='GET' action='tiptap_control.php'>
-					<select name='choose_tags' onchange='this.blur()' class='choose_tags'>
-						<option><em>Rechercher par..</em></option>
-						<?php ob_start(); ?>
-							<option value="Licences et Licences pro">Licences et Licences pro</option>
-							<option value="Dentaire">Dentaire</option>
-							<option value="Médecine">Médecine</option>
-							<option value="Pharmacie">Pharmacie</option>
-							<option value="Maïeutique">Maïeutique</option>
-							<option value="Kinésithérapie">Kinésithérapie</option>
-							<option value="Paramédical">Paramédical</option>
-							<option value="DEUST">DEUST</option>
-							<option value="DUT">DUT</option>
-							<option value="Design (lycée)">Design (lycée)</option>
-							<option value="BTS">BTS</option>
-							<option value="Prépa sciences">Prépa sciences</option>
-							<option value="Prépa éco">Prépa éco</option>
-							<option value="Prépa lettres">Prépa lettres</option>
-							<option value="Grandes écoles post bac (Ingénieurs, commerce, arts...)">Grandes écoles post bac (Ingénieurs, commerce, arts...)</option>
-							<option value="Institut d'études politiques">Institut d'études politiques</option>
-							<option value="Comptabilité">Comptabilité</option>
-							<option value="Social">Social</option>
-							<option value="Paramédical">Paramédical</option>
-							<option value="Design (école)">Design (école)</option>
-							<option value="Beaux-Arts">Beaux-Arts</option>
-							<option value="Architecture">Architecture</option>
-							<option value="Autres écoles (vente, industrie, tourisme, transports, communication...)">Autres écoles (vente, industrie, tourisme, transports, communication...)</option>
-						<?php $tags = ob_get_clean();
-						echo $tags; ?>
-					</select>
-					<input type='submit' class='submit' value='Rechercher' />
-				</form>
+				<div class='infos_form'>
+					<form method='GET' action='tiptap_control.php'>
+						<select name='choose_color' onchange='this.blur()' class='choose_tags' required>
+							<option><em>Choisir un thème..</em></option>
+							<option value="1">Bleu</option>
+							<option value="2">Marron</option>
+							<option value="3">Vert foncé</option>
+							<option value="4">Vert</option>
+							<option value="5">Vert - bleu</option>
+							<option value="6">Oréo</option>
+							<option value="7">Vert pâle</option>
+							<option value="8">Rose</option>
+							<option value="9">Violet</option>
+							<option value="10">Rouge</option>
+						</select>
+						<input type='submit' class='submit' value='Définir' />
+					</form>
+				</div>
+
+				<div class='infos_form'>
+					<form method='GET' action='tiptap_control.php'>
+						<select name='choose_tags' onchange='this.blur()' class='choose_tags'>
+							<option><em>Rechercher par..</em></option>
+							<?php ob_start(); ?>
+								<option value="Licences et Licences pro">Licences et Licences pro</option>
+								<option value="Dentaire">Dentaire</option>
+								<option value="Médecine">Médecine</option>
+								<option value="Pharmacie">Pharmacie</option>
+								<option value="Maïeutique">Maïeutique</option>
+								<option value="Kinésithérapie">Kinésithérapie</option>
+								<option value="Paramédical">Paramédical</option>
+								<option value="DEUST">DEUST</option>
+								<option value="DUT">DUT</option>
+								<option value="Design (lycée)">Design (lycée)</option>
+								<option value="BTS">BTS</option>
+								<option value="Prépa sciences">Prépa sciences</option>
+								<option value="Prépa éco">Prépa éco</option>
+								<option value="Prépa lettres">Prépa lettres</option>
+								<option value="Grandes écoles post bac (Ingénieurs, commerce, arts...)">Grandes écoles post bac (Ingénieurs, commerce, arts...)</option>
+								<option value="Institut d'études politiques">Institut d'études politiques</option>
+								<option value="Comptabilité">Comptabilité</option>
+								<option value="Social">Social</option>
+								<option value="Paramédical">Paramédical</option>
+								<option value="Design (école)">Design (école)</option>
+								<option value="Beaux-Arts">Beaux-Arts</option>
+								<option value="Architecture">Architecture</option>
+								<option value="Autres écoles (vente, industrie, tourisme, transports, communication...)">Autres écoles (vente, industrie, tourisme, transports, communication...)</option>
+							<?php $tags = ob_get_clean();
+							echo $tags; ?>
+						</select>
+						<input type='submit' class='submit' value='Rechercher' />
+					</form>
+				</div>
 			</div>
 		</div>
 
@@ -93,7 +114,7 @@
 
 			<div id='dock_infos_block2'>
 				<a href='tiptap_control.php#reponse' id='linkOne'>Poster un Tip !</a>
-				<a href='../index.php' id='linkTwo'>Retour à l'acceuil</a>
+				<a id='linkTwo'>Paramètres<img src='../pictures/fleche_left.png' /></a>
 			</div>
 		</div>
 
@@ -101,14 +122,14 @@
 			<div class='paging_system'>
 				<?php for ($i = 1; $i <= $nbOfPages; $i++) { ?>
 					<?php if ($i == $page) { ?>
-						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>' class='actualPage'><?= $i ?></p>
+						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>' class='actualPage'><?= $i ?></a>
 					<?php } else { ?>
-						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>'><?= $i ?></p>
+						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>'><?= $i ?></a>
 					<?php } ?>
 				<?php } ?>
 			</div>
-		<?php $paging_system = ob_get_clean(); ?>
-		<?= $paging_system; ?>
+		<?php $paging_system = ob_get_clean();
+		echo $paging_system; ?>
 
 		<div class='msg'>
 			<!-- Contain all messages that was posted on tree (max.) columns -->

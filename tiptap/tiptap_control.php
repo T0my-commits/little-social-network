@@ -4,6 +4,7 @@ session_start();
 
 require('../goodies/bg_change.php');
 require('tiptap_model.php');
+require('../color/color.php');
 
 // if $_COOKIES['bg_change'] == yes { $bg_change = 'yes'; }
 
@@ -36,6 +37,16 @@ elseif (isset($_POST['modif_tiptap']) AND isset($_POST['ID']) AND isset($_POST['
 	$ID = strip_tags($_POST['ID']);
 	updateMsg($type, $msg, $ID);
 }
+// Change theme & colors;
+elseif (isset($_GET['choose_color']) AND is_numeric($_GET['choose_color'])) {
+	if (strlen($_GET['choose_color']) <= 2) {
+		$numColor = strip_tags(intval($_GET['choose_color']));
+		makeColor($numColor);
+	}
+	else {
+		header('Location: tiptap_control.php');
+	}
+}
 // Just see the fuck*ng website !!!
 // :p
 elseif (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_POST['ID_TIP']) AND !isset($_POST['modif_tiptap']) AND !isset($_POST['ID']) AND !isset($_POST['gr'])) {
@@ -44,7 +55,7 @@ elseif (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_P
 	$nbMembers = countMembers();
 	// automatic paging system;
 	$nbTips = countMsg()[1];
-	$nbOfPages = ceil($nbTips/30);
+	$nbOfPages = ceil($nbTips/15);
 	try
 	{
 		if (isset($_GET['page'])) {

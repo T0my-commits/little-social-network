@@ -1,5 +1,7 @@
+$i = 0;
 $('.msgNoJs').text('Cacher le message');
 $('#alea').css('display', 'none');
+
 
 function resize(textarea) {
     var txt = textarea.value;
@@ -31,6 +33,12 @@ $('.msgNoJs').on('click', function() {
 $('.menu').on('click', function() {
 	$('#options_menu').slideToggle(150).css('display', 'block');
 	$(this).toggle(150).toggle(150);
+});
+
+$('#linkTwo').on('click', function() {
+	// Faire une condition pour incrémenter $i à chaque fois et rétablir le padding;
+	// $('#dock_infos').css('padding-top', '0');
+	$('.hide_div').slideToggle().css('display', 'block');
 });
 
 $("header a").on('click', function() {

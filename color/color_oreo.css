@@ -7,8 +7,8 @@
 	
 	/* Tip & Tap */
 	--bg-tiptop: #9babb0;
-	--tip-color: rgba(119, 95, 237, 1);
-	--tip-color-opacity75: rgba(119, 95, 237, 0.65);
-	--tip-color-opacity25: rgba(119, 95, 237, 0.25);
+	--tip-color: rgba(36, 36, 36, 1);
+	--tip-color-opacity75: rgba(36, 36, 36, 0.65);
+	--tip-color-opacity25: rgba(36, 36, 36, 0.25);
 	--tap-color: rgba(160, 192, 185, 1);
 }

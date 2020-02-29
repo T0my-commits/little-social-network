@@ -76,6 +76,11 @@ h1
 	transition: box-shadow 0.2s;
 }
 
+.hide_div
+{
+	display: block;
+}
+
 .infos
 {
 	display: flex;
@@ -99,7 +104,7 @@ h1
 .hour
 {
 	font-family: 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
-	font-size: 80px;
+	font-size: 50px;
 	margin-bottom: 10px;
 	background-color: var(--tip-color);
 	color: white;
@@ -177,6 +182,7 @@ h1
 	align-items: center;
 	background-color: var(--tip-color);
 	margin: 0px;
+	padding-top: 42px;
 }
 
 #dock_infos_block1
@@ -266,6 +272,30 @@ h1
 	transition: background-color 0.2s;
 }
 
+#dock_infos_block2 #linkTwo:hover img, #dock_infos_block2 #linkTwo:active img
+{
+	transform: rotate(90deg);
+	transition: transform ease-in-out 0.2s;
+}
+
+#dock_infos_block2 #linkTwo
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-self: center;
+	align-items: center;
+	padding: 12px 20px;
+}
+
+#dock_infos_block2 #linkTwo img
+{
+	width: 17px;
+	margin-left: 20px;
+	transform: rotate(-90deg);
+	transition: transform ease-in-out 0.2s;
+}
+
 .paging_system
 {
 	height: 50px;
@@ -286,11 +316,16 @@ h1
 	line-height: 40px;
 	margin: 10px 15px;
 	border-radius: 50px;
-	background-color: var(--tip-color);
+	background-color: var(--tap-color);
 	box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
 	font-size: 14px;
 	font-family: 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
 	transition: box-shadow 0.2s;
+}
+
+.paging_system .actualPage
+{
+	background-color: var(--tip-color);
 }
 
 .paging_system a:hover
