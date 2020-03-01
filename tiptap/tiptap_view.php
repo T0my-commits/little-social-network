@@ -6,6 +6,14 @@
 	<link href='../color/<?= $color; ?>' rel='stylesheet' />
 	<link href='style_tiptap.css' rel='stylesheet' />
 	<link href='../goodies/style_dock.css' rel='stylesheet' />
+	<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] == true) { ?>
+	<style>
+		body, header ul {background-color: black;}
+		header ul, header li a {border-bottom: 1px solid white; color: white;}
+		.date, .leavetip, .msg_leavetip, #reponse, .modif_footer, .msg_footer, .showTextAreaForTap, .infos_date {color: white;}
+		.showTextAreaForTap form { background-color: transparent; border: white; }
+	</style>
+<?php } ?>
 </head>
 
 <!-- IL FAUT CODER L'OPTION "PAS DE RÉPONSE" ET "DEMANDE DE MODIFICATION". CELA PASSE PAR DES ICONES "POINT D'INTERROGATION" ET "POINT D'EXCLAMATION" EN HAUT À DROITE DE LA BULLE -->
@@ -49,6 +57,16 @@
 							<option value="8">Rose</option>
 							<option value="9">Violet</option>
 							<option value="10">Rouge</option>
+							<option value="11">Mode sombre: Bleu</option>
+							<option value="12">Mode sombre: Marron</option>
+							<option value="13">Mode sombre: Vert foncé</option>
+							<option value="14">Mode sombre: Vert</option>
+							<option value="15">Mode sombre: Vert - bleu</option>
+							<option value="16">Mode sombre: Oréo</option>
+							<option value="17">Mode sombre: Vert pâle</option>
+							<option value="18">Mode sombre: Rose</option>
+							<option value="19">Mode sombre: Violet</option>
+							<option value="20">Mode sombre: Rouge</option>
 						</select>
 						<input type='submit' class='submit' value='Définir' />
 					</form>
@@ -149,7 +167,13 @@
 						<p class='date'><em>-- Tips postés le <?= $data['day_send_date']; ?> --</em></p>
 					<?php } $day_send_date = $data['day_send_date']; ?>
 
-					<p class="tip"><?= $data['msg']; ?></p><img src='../pictures/tip_msg.png' class='tip_img' /><img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
+					<p class="tip"><?= $data['msg']; ?></p>
+					<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] != true) { ?>
+						<img src='../pictures/tip_msg.png' class='tip_img' />
+					<?php } else { ?>
+						<img src='../pictures/tip_msg_dark.png' class='tip_img' />
+					<?php } ?>
+						<img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
 					<p class='tip_footer'>
 						<?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $data['autor']) { ?>
 							<a class='modif_footer'>Modifier</a>
@@ -242,7 +266,7 @@
 					<input type='submit' value='Soumettre' class='submit' />
 				</form>
 			<?php } else { ?>
-				<p>Vous devez être connecté pour poster des messages.</p>
+				<p class='msg_leavetip'>Vous devez être connecté pour poster des messages.</p>
 			<?php } ?>
 		</div>
 	</div>
