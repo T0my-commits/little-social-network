@@ -96,7 +96,7 @@ function getTips($page)
 	if (isset($research))
 	{
 		try {
-			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT ' . $firstEntry . ', 15'); // Exposure to a security breach I guess;
+			$answers = $db->prepare('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips WHERE tags = :research ORDER BY send_date DESC LIMIT ' . $firstEntry . ', 15'); // Exposure to a SQL security breach I guess;
 			$answers->execute(array(
 				'research' => $research));
 		}
@@ -109,7 +109,7 @@ function getTips($page)
 	}
 	else
 	{
-		$answers = $db->query('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT ' . $firstEntry . ' , 15'); // Exposure to a security breach I guess;
+		$answers = $db->query('SELECT *, DATE_FORMAT(send_date, "%d.%m.%Y") AS day_send_date, DATE_FORMAT(send_date, "%Hh%imin%ss") AS hour_send_date FROM tips ORDER BY send_date DESC LIMIT ' . $firstEntry . ' , 15'); // Exposure to a SQL security breach I guess;
 	}
 
 	// Return answers;

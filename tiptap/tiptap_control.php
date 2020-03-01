@@ -2,11 +2,10 @@
 // Starting sessions;
 session_start();
 
+// Requires;
 require('../goodies/bg_change.php');
 require('tiptap_model.php');
 require('../color/color.php');
-
-// if $_COOKIES['bg_change'] == yes { $bg_change = 'yes'; }
 
 // Add Tip;
 if (isset($_POST['send_tip'])) {

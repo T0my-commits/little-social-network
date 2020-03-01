@@ -68,6 +68,7 @@
 							<option value="19">Mode sombre: Violet</option>
 							<option value="20">Mode sombre: Rouge</option>
 						</select>
+						<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 						<input type='submit' class='submit' value='Définir' />
 					</form>
 				</div>
@@ -103,6 +104,7 @@
 							<?php $tags = ob_get_clean();
 							echo $tags; ?>
 						</select>
+						<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 						<input type='submit' class='submit' value='Rechercher' />
 					</form>
 				</div>
@@ -187,6 +189,7 @@
 							<p>Vous souhaitez ajouter quelque chose ?</p>
 							<input type='number' name='ID_TIP' value='<?= $data['id']; ?>' class='input_hide' required />
 							<textarea name='send_tap' placeholder='Je suis bref et respectueux dans mes propos (400 caractères max.)' maxlength='400' cols='1' title='' required></textarea>
+							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 							<input type='submit' value='Répondre' class='submit' />
 						</form>
 					</div>
@@ -203,6 +206,7 @@
 							<input type='text' name='gr' value='tips' class='input_hide' required />
 							<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' required />
 							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
+							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 							<input type='submit' value='Soumettre' class='submit' />
 						</form>
 					</div>
@@ -223,6 +227,7 @@
 							<input type='text' name='gr' value='taps' class='input_hide' required />
 							<input type='number' name='ID' value='<?= $tap['id']; ?>' class='input_hide' required />
 							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $tap["msg"]); ?></textarea>
+							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 							<input type='submit' value='Soumettre' class='submit' />
 						</form>
 					</div>
@@ -262,7 +267,8 @@
 						<?= $tags; ?>
 					</select>
 					<p><em>Rq: associer un tag à votre message vous permet d'être plus facilement trouvé et augmente vos chances d'être répondu.</em></p>
-
+					
+					<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 					<input type='submit' value='Soumettre' class='submit' />
 				</form>
 			<?php } else { ?>

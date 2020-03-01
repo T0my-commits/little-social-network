@@ -1,13 +1,15 @@
 <?php
 
 $_error = false;
-if ( isset($_POST['pseudo']) AND $_POST['password'])
+if (isset($_POST['pseudo']) AND isset($_POST['password']))
 {
+	// Brute force attack protection;
+	sleep(1);
 	// On vérifie les données de connection;
 	// ------------------------------------------------------------------------------------------------------------;
 
 	// On vérifie que tout les champs on été remplis;
-	if (! isset($_POST['pseudo']) AND $_POST['password'])
+	if (! isset($_POST['pseudo']) OR ! isset($_POST['password']))
 	{
 		$_error = true;
 	}
