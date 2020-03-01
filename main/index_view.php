@@ -33,7 +33,7 @@
 
 	<?php if (isset($_SESSION['id'])) { ?>
 		<div class='title'>
-			<h2>Bonjour <?= $_SESSION['pseudo']; ?></h2>
+			<h2>Bonjour <?= htmlspecialchars($_SESSION['firstname']); ?></h2>
 		</div>
 	<?php } ?>
 

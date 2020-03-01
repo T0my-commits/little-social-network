@@ -70,7 +70,7 @@ function getTips($page)
 
 	// Vérification des paramètres;
 	if (isset($_GET['choose_tags'])) {
-		$research = strip_tags($_GET['choose_tags']);
+		$research = htmlspecialchars(strip_tags($_GET['choose_tags']));
 		$error = true;
 		$i = 1;
 		while ($i < count($tags)) {

@@ -53,7 +53,7 @@ if (! isset($_SESSION['pseudo'])) { ?>
 					<a href='#'>Mon profil</a>
 					<a href='#'>Mes conversations</a>
 					<a href='#' id='separator' class='dev_areas'>Types d'études</a>
-					<a href='#' class='inscript'>Bonjour <?php echo $_SESSION['pseudo']; ?> !</a>
+					<a href='#' class='inscript'>Bonjour <?php echo htmlspecialchars($_SESSION['pseudo']); ?> !</a>
 					<a href='../members/disconnection.php'>Se déconnecter</a>
 				</div>
 

@@ -11,7 +11,7 @@ if ( isset($_POST['pseudo']) AND $_POST['password'])
 	{
 		$_error = true;
 	}
-	$pseudo = strip_tags($_POST['pseudo']);
+	$pseudo = htmlspecialchars(strip_tags($_POST['pseudo']));
 
 	// Connection avec la base de données;
 	$bdd = new PDO('mysql:host=localhost;dbname=unaware;charset=utf8', 'root', '');
@@ -24,7 +24,7 @@ if ( isset($_POST['pseudo']) AND $_POST['password'])
 	$resultat = $req->fetch();
 
 	// Comparaison du pass envoyé via le formulaire avec la base;
-	$isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
+	$isPasswordCorrect = password_verify($_POST['password'], $resultat['password']); // Exposure to a security breach I guess;
 
 	if (!$resultat)
 	{
@@ -37,11 +37,11 @@ if ( isset($_POST['pseudo']) AND $_POST['password'])
 	        session_start();
 			$_SESSION = array(
 				'id' => $resultat['id'],
-				'firstname' => $firstname,
-				'lastname' => $lastname,
-				'birthday' => $birthday,
-			    'email' => $email,
-			    'pseudo' => $pseudo);
+				'firstname' => $resultat['firstname'],
+				'lastname' => $resultat['lastname'],
+				'birthday' => $resultat['birthday'],
+			    'email' => $resultat['email'],
+			    'pseudo' => $resultat['pseudo']);
 	        header('Location: ../index.php');
 	    }
 	    else {

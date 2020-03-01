@@ -3,9 +3,9 @@
 // Vérification de la validité des informations;
 if (isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['birthday']) AND isset($_POST['email_registration']) AND isset($_POST['pseudo_registration']) AND isset($_POST['password']) AND isset($_POST['password_verif']))
 {
-	$firstname = strip_tags($_POST['firstname']);
-	$lastname = strip_tags($_POST['lastname']);
-	$birthday = strip_tags($_POST['birthday']);
+	$firstname = htmlspecialchars(strip_tags($_POST['firstname']));
+	$lastname = htmlspecialchars(strip_tags($_POST['lastname']));
+	$birthday = htmlspecialchars(strip_tags($_POST['birthday']));
 }
 else
 {
@@ -49,8 +49,8 @@ while ($donnee = $reponse->fetch())
 	}
 }
 
-$email = strip_tags($_POST['email_registration']);
-$pseudo = strip_tags($_POST['pseudo_registration']);
+$email = htmlspecialchars(strip_tags($_POST['email_registration']));
+$pseudo = htmlspecialchars(strip_tags($_POST['pseudo_registration']));
 
 
 // Hachage du mot de passe;

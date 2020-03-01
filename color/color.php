@@ -5,7 +5,7 @@ if (! isset($_COOKIE['color_theme']) AND ! isset($_GET['choose_color'])) {
 }
 elseif (! isset($_GET['choose_color'])) {
 	if (is_numeric($_COOKIE['color_theme']) AND strlen($_COOKIE['color_theme']) <= 2) {
-		$numColor = strip_tags($_COOKIE['color_theme']);
+		$numColor = htmlspecialchars(strip_tags($_COOKIE['color_theme']));
 		$color = getColor($numColor);
 	}
 	else {
