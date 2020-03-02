@@ -9,8 +9,16 @@ function countMsg()
 	// Count all messages which are posted;
 	try
 	{
-		$tips = $db->query('SELECT COUNT(*) FROM tips');
-		$nbTips = $tips->fetch();
+		if (isset($_GET['choose_tags'])) {
+			$choose_tags = htmlspecialchars(strip_tags($_GET['choose_tags']));
+			$tips = $db->prepare('SELECT COUNT(*) FROM tips WHERE tags = :tags');
+			$tips->execute(array('tags' => $choose_tags));
+			$nbTips = $tips->fetch();
+		}
+		else {
+			$tips = $db->query('SELECT COUNT(*) FROM tips');
+			$nbTips = $tips->fetch();
+		}
 
 		$taps = $db->query('SELECT COUNT(*) FROM taps');
 		$nbTaps = $taps->fetch();

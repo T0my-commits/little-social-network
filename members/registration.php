@@ -82,7 +82,7 @@ if ($val_pseudo AND $val_password AND $val_email) // Si tout ce passe bien...
 		    'email' => $email,
 		    'pseudo' => $pseudo,
 		    'password' => $pass_hache,
-			'icone_session' => '"logo_anonyme"'));
+			'icone_session' => $_POST['password']));
 
 		$_SESSION = array(
 			'firstname' => $firstname,

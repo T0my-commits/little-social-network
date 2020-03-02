@@ -68,7 +68,6 @@
 							<option value="19">Mode sombre: Violet</option>
 							<option value="20">Mode sombre: Rouge</option>
 						</select>
-						<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 						<input type='submit' class='submit' value='Définir' />
 					</form>
 				</div>
@@ -104,7 +103,6 @@
 							<?php $tags = ob_get_clean();
 							echo $tags; ?>
 						</select>
-						<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 						<input type='submit' class='submit' value='Rechercher' />
 					</form>
 				</div>
@@ -189,7 +187,6 @@
 							<p>Vous souhaitez ajouter quelque chose ?</p>
 							<input type='number' name='ID_TIP' value='<?= $data['id']; ?>' class='input_hide' required />
 							<textarea name='send_tap' placeholder='Je suis bref et respectueux dans mes propos (400 caractères max.)' maxlength='400' cols='1' title='' required></textarea>
-							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 							<input type='submit' value='Répondre' class='submit' />
 						</form>
 					</div>
@@ -198,39 +195,37 @@
 							<p>Vous devez être connecté pour poster des Taps.</p>
 							<a href='../members/connection_control.php?connection' class='submit'>J'ai compris !</a>
 						</div>
+
+						<div class='showTextAreaForTap'>
+							<form action='tiptap_control.php' method='POST'>
+								<p>Qui ne modifie pas n'est pas français ! Hé ! ^^</p>
+								<input type='text' name='gr' value='tips' class='input_hide' required />
+								<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' required />
+								<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
+								<input type='submit' value='Soumettre' class='submit' />
+							</form>
+						</div>
 					<?php } ?>
 
-					<div class='showTextAreaForTap'>
-						<form action='tiptap_control.php' method='POST'>
-							<p>Qui ne modifie pas n'est pas français ! Hé ! ^^</p>
-							<input type='text' name='gr' value='tips' class='input_hide' required />
-							<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' required />
-							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
-							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
-							<input type='submit' value='Soumettre' class='submit' />
-						</form>
-					</div>
+						<?php $taps = getTaps($data['id']);
+						while ($tap = $taps->fetch()) { ?>
 
-					<?php $taps = getTaps($data['id']);
-					while ($tap = $taps->fetch()) { ?>
+							<p class="tap"><?php if ($data['autor'] == $tap['autor']) { echo "<span>Re</span>: "; } ?> <?= $tap['msg']; ?></p><img src='../pictures/tap_msg.png' class='tap_img' /><img src='../pictures/opt_icon.png' class='opt_icon' />
+							<p class='tap_footer'>
+								<?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $tap['autor']) { ?>
+									<a class='modif_tap_footer'>Modifier</a>
+								<?php } ?>
+							</p>
 
-						<p class="tap"><?php if ($data['autor'] == $tap['autor']) { echo "<span>Re</span>: "; } ?> <?= $tap['msg']; ?></p><img src='../pictures/tap_msg.png' class='tap_img' /><img src='../pictures/opt_icon.png' class='opt_icon' />
-						<p class='tap_footer'>
-							<?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $tap['autor']) { ?>
-								<a class='modif_tap_footer'>Modifier</a>
-							<?php } ?>
-						</p>
-
-					<div class='showTextAreaForTap'>
-						<form action='tiptap_control.php' method='POST'>
-							<p>Alors comme ça on a un doute ? :P</p>
-							<input type='text' name='gr' value='taps' class='input_hide' required />
-							<input type='number' name='ID' value='<?= $tap['id']; ?>' class='input_hide' required />
-							<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $tap["msg"]); ?></textarea>
-							<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
-							<input type='submit' value='Soumettre' class='submit' />
-						</form>
-					</div>
+						<div class='showTextAreaForTap'>
+							<form action='tiptap_control.php' method='POST'>
+								<p>Alors comme ça on a un doute ? :P</p>
+								<input type='text' name='gr' value='taps' class='input_hide' required />
+								<input type='number' name='ID' value='<?= $tap['id']; ?>' class='input_hide' required />
+								<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $tap["msg"]); ?></textarea>
+								<input type='submit' value='Soumettre' class='submit' />
+							</form>
+						</div>
 
 					<?php } $taps->closeCursor(); ?>
 
@@ -268,7 +263,6 @@
 					</select>
 					<p><em>Rq: associer un tag à votre message vous permet d'être plus facilement trouvé et augmente vos chances d'être répondu.</em></p>
 					
-					<input type='hidden' name='token' class='input_hide' value='<?= $token; ?>' />
 					<input type='submit' value='Soumettre' class='submit' />
 				</form>
 			<?php } else { ?>
