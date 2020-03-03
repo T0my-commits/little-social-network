@@ -168,10 +168,10 @@
 					<?php } $day_send_date = $data['day_send_date']; ?>
 
 					<p class="tip"><?= $data['msg']; ?></p>
-					<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] != true) { ?>
-						<img src='../pictures/tip_msg.png' class='tip_img' />
-					<?php } else { ?>
+					<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] == true) { ?>
 						<img src='../pictures/tip_msg_dark.png' class='tip_img' />
+					<?php } else { ?>
+						<img src='../pictures/tip_msg.png' class='tip_img' />
 					<?php } ?>
 						<img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
 					<p class='tip_footer'>
@@ -196,12 +196,13 @@
 							<a href='../members/connection_control.php?connection' class='submit'>J'ai compris !</a>
 						</div>
 
+					<?php } if (isset($_SESSION['id']) AND $data['autor'] == $_SESSION['id']) { ?>
 						<div class='showTextAreaForTap'>
 							<form action='tiptap_control.php' method='POST'>
 								<p>Qui ne modifie pas n'est pas français ! Hé ! ^^</p>
 								<input type='text' name='gr' value='tips' class='input_hide' required />
 								<input type='number' name='ID' value='<?= $data['id']; ?>' class='input_hide' required />
-								<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='verif(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
+								<textarea name='modif_tiptap' placeholder='Une nouvelle idée ?' maxlength='400' title='' onkeyup='resize(this)' required><?= str_replace("<br />", "", $data['msg']); ?></textarea>
 								<input type='submit' value='Soumettre' class='submit' />
 							</form>
 						</div>

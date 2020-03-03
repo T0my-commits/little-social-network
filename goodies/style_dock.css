@@ -20,6 +20,7 @@ header
 	word-spacing: normal;
 	z-index: 10;
 	color: black;
+	font-family: 'montserratregular', 'montserratsemibold', 'montserrat_alternatesXBd', 'Arial';
 }
 
 header ul
