@@ -371,6 +371,7 @@ h1
 
 .tip
 {
+	min-width: 233px;
 	position: relative;
 	background-color: var(--tip-color);
 	border-radius: 50px;
@@ -386,11 +387,11 @@ h1
 {
 	position: relative;
 	top: -28px;
-	right: -310px;
+	right: 0px;
 	width: 25px;
 	height: 25px;
-	z-index: 2;
 	margin: 0px;
+	margin-left: 80%;
 	padding: 0px;
 	z-index: 1;
 	background-color: var(--tip-color);
@@ -616,6 +617,10 @@ h1
 	font-size: 14px;
 }
 
+.smileys
+{
+	/*border: 1px solid black;*/
+}
 
 /* ============================== Media Queries ================================ */
 @media all and (max-width: 1200px)

@@ -6,6 +6,8 @@
 	<link href='../color/<?= $color; ?>' rel='stylesheet' />
 	<link href='style_tiptap.css' rel='stylesheet' />
 	<link href='../goodies/style_dock.css' rel='stylesheet' />
+	<!-- <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' />
+	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' /> -->
 	<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] == true) { ?>
 	<style>
 		body, header ul {background-color: black;}
@@ -173,7 +175,7 @@
 					<?php } else { ?>
 						<img src='../pictures/tip_msg.png' class='tip_img' />
 					<?php } ?>
-						<img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
+					<img src='../pictures/opt_icon.png' class='opt_icon' /><?php if ($data['no_answers'] == 1) { ?><div class='no_answers'></div><?php } ?>
 					<p class='tip_footer'>
 						<?php if (isset($_SESSION['id']) AND $_SESSION['id'] == $data['autor']) { ?>
 							<a class='modif_footer'>Modifier</a>
@@ -255,6 +257,8 @@
 				<!-- Showing a form that permitted to write a comment -->
 				<form action='tiptap_control.php' method='POST'>
 
+					<div class='smileys'></div>
+
 					<textarea name='send_tip' placeholder='Une question, une idée, une inquiétude ? (700 caractères max.)' maxlength='700' rows='10' cols='50' required></textarea>
 					<p><em>Rq: les messages sont anonymés à l'affichage mais vous restez l'auteur du Tip !</em></p>
 
@@ -270,6 +274,7 @@
 				<p class='msg_leavetip'>Vous devez être connecté pour poster des messages.</p>
 			<?php } ?>
 		</div>
+	<div style='color: grey; text-align: center;'>Smiley Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 	</div>
 </body>
 
