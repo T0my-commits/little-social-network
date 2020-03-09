@@ -93,7 +93,7 @@ h1
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
-	font-family: 'montserratregular', 'montserratsemibold', 'montserrat_alternatesXBd', 'Arial';
+	font-family: 'Sen', 'montserratregular', 'montserratsemibold', 'montserrat_alternatesXBd', 'Arial';
 	margin: 0px;
 	padding: 10px 90px;
 	padding-bottom: 60px;
@@ -207,20 +207,20 @@ h1
 {
 	width: 20%;
 	text-align: center;
-	font-size: 13px;
+	font-size: 12px;
 	font-weight: bold;
 	margin: 20px 5px;
 }
 
 #dock_infos_block1 div strong
 {
-	font-family: 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
-	font-size: 20px;
+	font-family: 'Sen', 'montserrat_alternatesXBd', 'montserratsemibold', 'montserratregular', 'Arial';
+	font-size: 17px;
 }
 
 #dock_infos_block1 div .info_text
 {
-	font-family: 'montserratsemibold', 'montserratregular', 'Arial';
+	font-family: 'Sen', 'montserratsemibold', 'montserratregular', 'Arial';
 	font-size: 17px;
 }
 
@@ -359,6 +359,8 @@ h1
 	width: 380px;
 	margin-right: 50px;
 	margin-top: 0px;
+	font-family: 'Sen', sans-serif;
+	font-size: 14.7px;
 	/*border: 2px solid black;*/
 }
 

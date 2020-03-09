@@ -6,6 +6,7 @@
 	<link href='../color/<?= $color; ?>' rel='stylesheet' />
 	<link href='style_tiptap.css' rel='stylesheet' />
 	<link href='../goodies/style_dock.css' rel='stylesheet' />
+	<link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet"> 
 	<!-- <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' />
 	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' /> -->
 	<?php if (isset($_SESSION['dark_mode']) AND $_SESSION['dark_mode'] == true) { ?>
@@ -128,7 +129,7 @@
 				</div>
 				<div>
 					<img src='../pictures/protectIcon.png' />
-					<p>Et un service <br /><strong class='info_text'>sûr</strong><br />et de confiance</p>
+					<p>Et c'est <br /><strong class='info_text'>gratuit</strong><br />et ça le resteras</p>
 				</div>
 			</div>
 
@@ -274,7 +275,7 @@
 				<p class='msg_leavetip'>Vous devez être connecté pour poster des messages.</p>
 			<?php } ?>
 		</div>
-	<div style='color: grey; text-align: center;'>Smiley Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+	<!-- <div style='color: grey; text-align: center;'>Smiley Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 	</div>
 </body>
 
