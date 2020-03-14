@@ -9,23 +9,6 @@
 </head>
 
 <body>
-
-<!--
-	<div class='personnalisation'>
-		<div class='custom'>
-			<h4>\\ Accéder à..</h4>
-			<div class='accedera'>
-				<a href='#'><div class='menu'><img src='pictures/wall_actu.png' /><br />Mur d'actualités</div></a>
-				<a href='forum/post_control.php'><div class='menu'><img src='pictures/forum_icon.png' /><br />Forum</div></a>
-				<?= $opt; ?>
-			</div>
-			<h4>\\ Choisir un thème</h4>
-			<em>En sélectionnant un thème, vous acceptez l'utilisation des cookies.</em>
-			<p>Blabla...</p>
-		</div>
-	</div>
--->
-
 	<div class='opt'>
 		<a href='#'><img src='pictures/menu_icon.png' /><br />Menu</a>
 		<?= $opt; ?>

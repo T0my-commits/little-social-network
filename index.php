@@ -2,15 +2,15 @@
 session_start();
 
 require('main/index_model.php');
-require('goodies/bg_change.php');
+choose_bg();
 
 try
 {
 	if (isset($_SESSION['id'])) {
-		$opt = "<a href='members/connection_control.php?deconnection' class='registration' style='display: block;'><img src='pictures/power.png' /><br />Déconnection</a>";
+		$opt = "<a href='members/index_members.php?disconnection' class='registration' style='display: block;'><img src='pictures/power.png' /><br />Déconnection</a>";
 	}
 	else {
-		$opt = "<a href='members/connection_control.php?connection' class='registration' style='display: block;'><img src='pictures/power.png' /><br />Connection</a>";
+		$opt = "<a href='members/index_members.php?connection' class='registration' style='display: block;'><img src='pictures/power.png' /><br />Connection</a>";
 	}
 }
 catch(Exception $e)

@@ -3,7 +3,6 @@
 session_start();
 
 // Requires;
-require('../goodies/bg_change.php');
 require('tiptap_model.php');
 require('../color/color.php');
 
