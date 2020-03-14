@@ -71,7 +71,7 @@ body
 h1 .logoUnaware
 {
 	width: 110px;
-	background-color: grey;
+	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 200px;
 }
 
@@ -98,7 +98,7 @@ aside
 
 form
 {
-	width: 335px;
+	width: 400px;
 	border-radius: 3px;
 	padding: 20px 50px;
 }

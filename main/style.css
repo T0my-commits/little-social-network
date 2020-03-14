@@ -171,35 +171,6 @@ h2
 	margin-right: 20px;
 }
 
-/*
-.personnalisation
-{
-	position: absolute;
-	width: 97%;
-}
-
-.custom
-{
-	width: 600px;
-	background-color: green;
-	border-radius: 5px;
-	padding: 10px 20px;
-	margin: auto;
-}
-
-.custom .menu img
-{
-	width: 60px;
-	height: 60px;
-}
-
-.accedera
-{
-	display: flex;
-	justify-content: space-around;
-}
-*/
-
 
 /* ============================== Media Queries ================================ */
 @media all and (max-width: 1200px)
