@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+	<div id='content'>
 		<h1 id='contact'>Incription - Bienvenue sur Unaware</h1>
 		<?php
 		if (isset($_GET['good_job!']))
@@ -36,12 +37,14 @@
 				<?php if (isset($_GET['err_bien_essaye'])) {echo "<p class='alert'>: IL FAUT REMPLIR TOUS LES CHAMPS !</p>";} ?>	
 			</form>
 		</aside>
+	</div>
 
 <?php $registration = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
 		<!-- On affiche un formulaire de connection -->
-		<h1 id='contact'>Nous sommes heureux de vous voir ici</h1>
+		<div id='content'>
+			<h1 id='contact'>Nous sommes heureux de vous voir ici</h1>
 			<aside style='flex-direction: column;'>
 
 				<?php
@@ -68,4 +71,5 @@
 
 				</form>
 			</aside>
+		</div>
 <?php $connection = ob_get_clean(); ?>

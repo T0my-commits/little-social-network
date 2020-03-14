@@ -5,7 +5,7 @@ session_start();
 if (! isset($_SESSION['pseudo'])) { ?>
 <header>
 	<ul>
-		<li><img src='../pictures/session_icons/anonymous.png' alt='logo membre' /></li>
+		<li><img src='../pictures/logoUnaware.png' alt='logo membre' /></li>
 		<li><a href='../index.php' class='unaware'>Unaware</a></li>
 		<li><?php include('date.php'); ?> </li>
 		<li id='alea'><a href='../index.php'>Javascript est désactivé ? Cliquez ici.</a></li>

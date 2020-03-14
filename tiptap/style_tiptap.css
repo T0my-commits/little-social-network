@@ -39,7 +39,7 @@ body
 
 #body
 {
-	padding-top: 42px; 
+	padding-top: 42px;
 }
 
 .title
@@ -506,6 +506,12 @@ h1
 	border-bottom: 1px solid grey;
 	margin-bottom: 20px;
 	margin-top: 70px;
+}
+
+.smiley
+{
+	width: 20px;
+	cursor: pointer;
 }
 
 #reponse

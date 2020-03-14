@@ -31,14 +31,27 @@ body
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	background-image: url('../pictures/notebooks.jpeg');
+	/*background-image: url('../pictures/notebooks.jpeg');*/
 	font-family: 'montserratregular', 'Arial';
+}
+
+#content
+{
+	position: relative;
+	top: 10%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px;
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+	align-self: center;
+	align-items: center;
+	border-radius: 20px;
 }
 
 aside
 {
 	width: 425px;
-	border-radius: 10px;
 	padding: 20px 10px;
 	background-color: rgba(255, 255, 255, 0.3);
 	align-self: center;
@@ -61,7 +74,7 @@ form input
 	-moz-appearance: none;
 	outline: none;
 	border: 1px solid #d8dcde;
-	border-radius: 4px;
+	border-radius: 100px;
 	background-color: white;
 	padding: .71429em 1.14286em;
 	width: 100%;
@@ -100,6 +113,7 @@ form input:focus
 	cursor: pointer;
 	text-transform: uppercase;
 	margin-top: 20px;
+	font-weight: bold;
 }
 
 .submit:hover
