@@ -26,7 +26,7 @@ function checkUser() {
 	if (!$resultat)
 	{
 	    $_error = true;
-	    header('Location: index_members.php?connection&_error');
+	    header('Location: ../control/members_control.php?connection&_error');
 	}
 	else
 	{
@@ -43,7 +43,7 @@ function checkUser() {
 	    }
 	    else {
 		$_error = true;
-	    	header('Location: index_members.php?connection&_error');
+	    	header('Location: ../control/members_control.php?connection&_error');
 	    }
 	}
 

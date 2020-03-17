@@ -75,6 +75,11 @@ h1 .logoUnaware
 	border-radius: 200px;
 }
 
+.block_footer
+{
+	max-width: 550px;
+}
+
 #content
 {
 	position: relative;
@@ -98,7 +103,7 @@ aside
 
 form
 {
-	width: 400px;
+	width: 320px;
 	border-radius: 3px;
 	padding: 20px 50px;
 }

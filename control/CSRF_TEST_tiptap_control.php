@@ -8,7 +8,7 @@ $_SESSION['token'] = $token;
 
 // Requires;
 require('../goodies/bg_change.php');
-require('tiptap_model.php');
+require('../model/tiptap_model.php');
 require('../color/color.php');
 
 // Just see the fuck*ng website !!!
@@ -44,7 +44,7 @@ if (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_POST[
 		$choose_tags = htmlspecialchars(strip_tags($_GET['choose_tags']));
 	}
 	// after;
-	require('tiptap_view.php');
+	require('../view/tiptap_view.php');
 }
 else {
 	if (isset($_SESSION['token']) AND isset($_POST['token']) AND !empty($_SESSION['token']) AND !empty($_POST['token'])) { // form using POST;

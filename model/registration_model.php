@@ -134,10 +134,10 @@ function addUser() {
 	$reponse->closeCursor();
 	
 	if ($resultats == '') {
-	header('Location: ../../index.php');
+	header('Location: ../index.php');
 	}
 	else {
-	header('Location: connection_control.php?inscription' . $resultats);
+	header('Location: ../control/connection_control.php?inscription' . $resultats);
 	}
 }
 

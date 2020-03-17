@@ -4,8 +4,8 @@
 	<meta charset='utf-8' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Unaware - Inscription</title>
-	<link href='css/style_registration.css' rel='stylesheet' />
-	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href='../css/style_registration.css' rel='stylesheet' />
+	<!-- <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 
 
@@ -13,10 +13,10 @@
 
 	<div id='title_img'>
 		<div id='title_text'>
-			<img src='../../pictures/logoUnaware.png' class='logo' />
+			<img src='../pictures/logoUnaware.png' class='logo' />
 			<h1><a href='../index.php'>unaware</a></h1>
 		</div>
-		<img src='../../pictures/title_img.png' alt='example_Unaware' />
+		<img src='../pictures/title_img.png' alt='example_Unaware' />
 		<div class='block_footer'>
 			<ul>
 				<li>Utilisation illimité</li>
@@ -32,7 +32,7 @@
 	</div>
 
 	<div id='content'>
-		<h1><img src='../../pictures/logoUnaware.png' class='logoUnaware' /></h1>
+		<h1><img src='../pictures/logoUnaware.png' class='logoUnaware' /></h1>
 		
 		<!-- Showing registration form -->
 		<aside>

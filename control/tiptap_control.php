@@ -3,7 +3,7 @@
 session_start();
 
 // Requires;
-require('tiptap_model.php');
+require('../model/tiptap_model.php');
 require('../color/color.php');
 
 // Add Tip;
@@ -78,7 +78,7 @@ elseif (!isset($_POST['send_tip']) AND !isset($_POST['send_tap']) AND !isset($_P
 		$choose_tags = htmlspecialchars(strip_tags($_GET['choose_tags']));
 	}
 	// after;
-	require('tiptap_view.php');
+	require('../view/tiptap_view.php');
 }
 else {
 	header('Location: tiptap_control.php?rien');

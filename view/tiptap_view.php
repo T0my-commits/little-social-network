@@ -5,10 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Unaware - Acceuil membres</title>
 	<link href='../color/<?= $color; ?>' rel='stylesheet' />
-	<link href='style_tiptap.css' rel='stylesheet' />
+	<link href='../css/style_tiptap.css' rel='stylesheet' />
 	<link href='../goodies/style_dock.css' rel='stylesheet' />
-	<link href="https://fonts.googleapis.com/css?family=Sen&ampdisplay=swap" rel="stylesheet" /> 
-	<link href='main/style.css' rel='stylesheet' />
+	<link href="https://fonts.googleapis.com/css?family=Sen&ampdisplay=swap" rel="stylesheet" />
    	<!-- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' />
@@ -138,7 +137,7 @@
 			</div>
 
 			<div id='dock_infos_block2'>
-				<a href='tiptap_control.php#reponse' id='linkOne'>Poster un Tip !</a>
+				<a href='../control/tiptap_control.php#reponse' id='linkOne'>Poster un Tip !</a>
 				<a id='linkTwo'>Paramètres<img src='../pictures/fleche_left.png' /></a>
 			</div>
 		</div>
@@ -147,9 +146,9 @@
 			<div class='paging_system'>
 				<?php for ($i = 1; $i <= $nbOfPages; $i++) { ?>
 					<?php if ($i == $page) { ?>
-						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>' class='actualPage'><?= $i ?></a>
+						<a href='../control/tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>' class='actualPage'><?= $i ?></a>
 					<?php } else { ?>
-						<a href='tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>'><?= $i ?></a>
+						<a href='../control/tiptap_control.php?page=<?= $i; ?><?php if (isset($choose_tags)) { echo "&choose_tags=" . $choose_tags . ""; } ?>'><?= $i ?></a>
 					<?php } ?>
 				<?php } ?>
 			</div>
@@ -200,7 +199,7 @@
 					<?php } else { ?>
 						<div class='showTextAreaForTap'>
 							<p>Vous devez être connecté pour poster des Taps.</p>
-							<a href='../members/index_members.php?connection' class='submit'>J'ai compris !</a>
+							<a href='../control/members_control.php?connection' class='submit'>J'ai compris !</a>
 						</div>
 
 					<?php } if (isset($_SESSION['id']) AND $data['autor'] == $_SESSION['id']) { ?>
@@ -486,10 +485,10 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="bootstrap/js/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-<script src='anim_tiptap.js' type='text/javascript'></script>
+<script src='../js/anim_tiptap.js' type='text/javascript'></script>
 
 </html>

@@ -9,8 +9,8 @@ if (! isset($_SESSION['pseudo'])) { ?>
 		<li id='alea'><a href='../index.php'>Javascript est désactivé ? Cliquez ici.</a></li>
 
 		<div class='button'>
-			<li id='inscript'><a href='../members/index_members.php?inscription' class='inscript'>S'inscrire</a></li>
-			<li id='connect'><a class='connect' href='../members/index_members.php?connection'>Se connecter</a></li>
+			<li id='inscript'><a href='../control/members_control.php?inscription' class='inscript'>S'inscrire</a></li>
+			<li id='connect'><a class='connect' href='../control/members_control.php?connection'>Se connecter</a></li>
 			<li class='dropdown'>
 				<a href='#menu' class='menu'><img src='../pictures/main_icon_purple.png' alt='Logo du menu' /></a>
 				<div id='options_menu'>
@@ -18,8 +18,8 @@ if (! isset($_SESSION['pseudo'])) { ?>
 					<a href='#'>Mon profil</a>
 					<a href='#'>Mes conversations</a>
 					<a href='#' id='separator' class='dev_post'>Types d'études</a>
-					<a href='../members/index_members.php?inscription' class='inscript'>S'inscrire</a>
-					<a href='../members/index_members.php?connection'>Se connecter</a>
+					<a href='../control/members_control.php?inscription' class='inscript'>S'inscrire</a>
+					<a href='../control/members_control.php?connection'>Se connecter</a>
 				</div>
 			</li>
 		</div>
@@ -52,7 +52,7 @@ if (! isset($_SESSION['pseudo'])) { ?>
 					<a href='#'>Mes conversations</a>
 					<a href='#' id='separator' class='dev_areas'>Types d'études</a>
 					<a href='#' class='inscript'>Bonjour <?php echo htmlspecialchars($_SESSION['pseudo']); ?> !</a>
-					<a href='../members/index_members.php?disconnection'>Se déconnecter</a>
+					<a href='../control/members_control.php?disconnection'>Se déconnecter</a>
 				</div>
 
 			</li>

@@ -106,5 +106,5 @@ function getColor($numColor)
 function makeColor($numColor)
 {
 	setcookie('color_theme', $numColor, time() + 365*24*3600, null, null, false, true);
-	header('Location: ../index.php');
+	header('Location: ../control/tiptap_control.php');
 }

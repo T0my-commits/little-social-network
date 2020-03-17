@@ -89,7 +89,7 @@ function getTips($page)
 			$i++;
 		}
 		if ($error == true) {
-			header('Location: tiptap_control.php');
+			header('Location: ../control/tiptap_control.php');
 		}
 	}
 
@@ -112,7 +112,7 @@ function getTips($page)
 	    {
 			throw new Exception('Impossible de récupérer les derniers Tips :/');
 	        die('Erreur : '.$e->getMessage());
-			header('Location: tiptap_control.php');
+			header('Location: ../control/tiptap_control.php');
 	    }
 	}
 	else
@@ -163,7 +163,7 @@ function postTips($tip, $tags)
 function addTips($tips, $tags)
 {
     $affectedLines = postTips($tips, $tags);
-	header('Location: tiptap_control.php');
+	header('Location: ../control/tiptap_control.php');
 }
 
 function postTaps($msg, $ID_TIP)
@@ -185,7 +185,7 @@ function postTaps($msg, $ID_TIP)
 function addTaps($msg, $ID_TIP)
 {
     $affectedLines = postTaps($msg, $ID_TIP);
-	header('Location: tiptap_control.php');
+	header('Location: ../control/tiptap_control.php');
 }
 
 function rePostMsg($type, $msg, $ID)
@@ -209,7 +209,7 @@ function rePostMsg($type, $msg, $ID)
 	    ));
 	}
 	else {
-		header('Location: tiptap_control.php');
+		header('Location: ../control/tiptap_control.php');
 	}
 
     return $affectedLines;
@@ -218,7 +218,7 @@ function rePostMsg($type, $msg, $ID)
 function updateMsg($type, $msg, $ID)
 {
     $affectedLines = rePostMsg($type, $msg, $ID);
-	header('Location: tiptap_control.php');
+	header('Location: ../control/tiptap_control.php');
 }
 
 function dbConnect()
