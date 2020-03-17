@@ -34,7 +34,7 @@
 			<div class='title'>
 				<h1>Tips & Tap, les questions-réponses en un clic !</h1>
 				<p>
-					Tips & Tap est un concept assez singulier dans son fonctionnement. Sur cette page, vous jouez deux rôles: vous postez des tips (questions) et / ou vous y répondez avec des taps (réponses). Si vous le souhaitez, vous pouvez changer les fonds d'écrans dans le menu sur la page d'acceuil. Enjoy :)
+					Tips & Tap est un concept assez singulier dans son fonctionnement. Sur cette page, vous jouez deux rôles: vous postez des Taps d'un part et vous y répondez d'autre part. N'hésitez pas à faire preuve de discipline et de respect, force à tous !
 				</p>
 				<p>Bon Tips !</p>
 				<a class='msgNoJs' href='#'>Désolé, Javascript est désactivé :/</a> <!-- Ce <a> est effacé par Javascript au chargement de la page -->
