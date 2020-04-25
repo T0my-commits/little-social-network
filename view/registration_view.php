@@ -36,7 +36,7 @@
 		
 		<!-- Showing registration form -->
 		<aside>
-			<form action='index_members.php?inscription' method='POST'>
+			<form action='members_control.php?inscription' method='POST'>
 				<label>Mon prénom<input type='text' name='firstname' placeholder='Mon prénom' maxlength='25' autofocus required /></label>
 				<label>Mon nom<input type='text' name='lastname' placeholder='Mon nom' maxlength='25' required /></label>
 				<label>Mon année de naissance<input type='number' name='birthday' min='1950' max='2010' value='2002' required /></label>

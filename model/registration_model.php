@@ -137,7 +137,7 @@ function addUser() {
 	header('Location: ../index.php');
 	}
 	else {
-	header('Location: ../control/connection_control.php?inscription' . $resultats);
+	header('Location: ../control/members_control.php?inscription' . $resultats);
 	}
 }
 
